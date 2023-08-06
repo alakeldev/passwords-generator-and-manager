@@ -12,14 +12,15 @@ print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", co
 def get_user_name():
     """ 
     Simple Function To Get the User Full Name, 
-    Then Check On The User Name if it Follows the General Name Syntax "letters" only => using (Regular Expression)    
-    Say Hi To User through Simple nice Message
+    Then Check On The User Name if it Follows the General Name Syntax "letters" only => using (Regular Expression) 
+    also more than two letters.
+    Say Hi to user_name through Simple nice Message
     """
     while True:
         fname = input("Please Enter Your First Name: ").strip().capitalize()
         lname = input("Please Enter Your Last Name: ").strip().capitalize()
 
-        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname):
+        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname) and len(fname) > 2 and len(lname) > 2:
             print(termcolor.colored(f"\nHi {fname} {lname}, Nice To See You!. \n", color = "blue"))
             break
 
