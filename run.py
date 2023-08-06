@@ -32,14 +32,17 @@ def get_user_name():
             except ValueError as e:
                 print(termcolor.colored(f"\nInvalid Name: {e}. Please try again.\n", color = "blue"))
 
-get_user_name()
+
 
 
 def pwd_generate():
     """ 
-    Function that prompts the user to enter the desired length of a new password 
+    Function to ask the user if he wants to generate a new password?
+    - if "yes": it prompts the user to enter the desired length of a new password 
     Then It's going to check if the user value is a number between 4 and 70 to accept
     and Generate the new password from the static variable that we provided
+    - If "No":
+    - If "Other Values" it will start again and push the user to put the expected values to proceed.
     """
     while True:
         ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower()
@@ -79,4 +82,11 @@ def pwd_generate():
 
                 print(termcolor.colored(f"\nInvalid Value: {w}.\n", color = "blue"))
 
-pwd_generate()
+
+
+def main():
+    ''' Function to Run All App Functions inside it '''
+    get_user_name()
+    pwd_generate()
+
+main()
