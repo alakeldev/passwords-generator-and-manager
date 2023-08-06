@@ -45,7 +45,7 @@ def pwd_generate():
     - If "Other Values" it will start again and push the user to put the expected values to proceed.
     """
     while True:
-        ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower()
+        ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower().strip()
         print("\n", end = "")
 
         if ask_user == "y" or ask_user == "yes":
