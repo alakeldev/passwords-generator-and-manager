@@ -42,24 +42,41 @@ def pwd_generate():
     and Generate the new password from the static variable that we provided
     """
     while True:
-        pwd_len = input("How many characters do you want your password to have? 'MIN = 4' & 'MAX = 70': ").strip()
+        ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower()
         print("\n", end = "")
 
-        if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
-            PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{+ZQ"
-            pwd = ""
-            new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
-            print(f"Your New Password Is: {new_password} \n")
+        if ask_user == "y" or ask_user == "yes":
+            while True:
+                pwd_len = input("How many characters do you want your password to have? 'MIN = 4' & 'MAX = 70': ").strip()
+                print("\n", end = "")
+
+                if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
+                    PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{+ZQ"
+                    pwd = ""
+                    new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
+                    print(f"Your New Password Is: {new_password} \n")
+                    break
+                
+                else:
+                    try:
+                        raise ValueError(
+                            f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
+                            )
+                    except ValueError as p:
+
+                        print(termcolor.colored(f"\nInvalid Value: {p}. Please try again.\n", color = "blue"))
             break
-        
+
+        elif ask_user == "n" or ask_user == "no":
+            break
+
         else:
             try:
                 raise ValueError(
-                    f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
-                    )
-            except ValueError as p:
+                    f"Please enter yes/y or no/n. No other values available"
+                            )
+            except ValueError as w:
 
-                print(termcolor.colored(f"\nInvalid Value: {p}. Please try again.\n", color = "blue"))
-        
+                print(termcolor.colored(f"\nInvalid Value: {w}.\n", color = "blue"))
 
 pwd_generate()
