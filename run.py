@@ -7,7 +7,6 @@ import re
 app_title = pyfiglet.figlet_format("Passwords Generator", width = 100)
 print(termcolor.colored(app_title, color= "blue"))
 
-
 print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color = "blue"))
 
 def get_user_name():
@@ -34,52 +33,60 @@ def get_user_name():
 
 
 
-
 def pwd_generate():
     """ 
-    Function to ask the user if he wants to generate a new password?
+    Function to ask the user if he wants to generate a new password? with three scenarios as per below:
     - if "yes": it prompts the user to enter the desired length of a new password 
-    Then It's going to check if the user value is a number between 4 and 70 to accept
-    and Generate the new password from the static variable that we provided
+    Then It's going to check if the user value is a number between 4 and 70 to accept it
+    and Generate the new password from the static variable that we provided.
+    Finally it will ask the user if wants another new password to generate a new one again.
     - If "No":
-    - If "Other Values" it will start again and push the user to put the expected values to proceed.
+    - If "Other Values" it will show user msg(invalid value) to guide the user.
+    Then starts again and push the user to put the expected values to proceed.
     """
     while True:
         ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower().strip()
-        print("\n", end = "")
-
         if ask_user == "y" or ask_user == "yes":
+
             while True:
                 pwd_len = input("How many characters do you want your password to have? 'MIN = 4' & 'MAX = 70': ").strip()
                 print("\n", end = "")
-
                 if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
                     PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{+ZQ"
                     pwd = ""
                     new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
                     print(f"Your New Password Is: {new_password} \n")
-                    break
-                
+
+                    while True:
+                        another_pwd = input("Do you want Another new Password? 'y/n' or 'yes/no': ").lower().strip()
+                        if another_pwd == "yes" or another_pwd == "y":
+                            break
+                        elif another_pwd == "no" or another_pwd == "n":
+                            return False
+                        else:
+                            try:
+                                raise ValueError(
+                                f"Please enter yes/no or y/n. Sorry! no other values available"
+                                )
+                            except ValueError as u:
+                                print(termcolor.colored(f"\nInvalid Value: {u}.\n", color = "blue"))
                 else:
                     try:
                         raise ValueError(
                             f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
                             )
                     except ValueError as p:
-
                         print(termcolor.colored(f"\nInvalid Value: {p}. Please try again.\n", color = "blue"))
-            break
 
         elif ask_user == "n" or ask_user == "no":
-            break
+            return False
 
         else:
             try:
                 raise ValueError(
-                    f"Please enter yes/y or no/n. No other values available"
+                    f"Please enter yes/no or y/n. Sorry! no other values available"
                             )
             except ValueError as w:
-
                 print(termcolor.colored(f"\nInvalid Value: {w}.\n", color = "blue"))
 
 
