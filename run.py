@@ -20,7 +20,7 @@ def get_user_name():
         fname = input("Please Enter Your First Name: ").strip().capitalize()
         lname = input("Please Enter Your Last Name: ").strip().capitalize()
 
-        if re.search("^[A-z]+$", fname and lname):
+        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname):
             print(termcolor.colored(f"\nHi {fname} {lname}, Nice To See You!. \n", color = "blue"))
             break
 
@@ -40,17 +40,25 @@ def pwd_generate():
     Function that prompts the user to enter the desired length of a new password 
     Then it will Generate the new password from the static variable that we provided
     """
-    pwd_len = input("How many characters do you want your password to have: ")
+    while True:
+        pwd_len = input("How many characters do you want your password to have: ").strip()
+        print("\n", end = "")
 
-    print("\n", end = "")
+        if re.search("^\d+$", pwd_len):
+            PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{"
+            pwd = ""
+            new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
+            print(f"Your New Password Is: {new_password} \n")
+            break
+        
+        else:
+            try:
+                raise ValueError(
+                    f"Write Only Numbers!"
+                    )
+            except ValueError as p:
 
-    PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{"
+                print(termcolor.colored(f"\nInvalid Value: {p}. Please try again.\n", color = "blue"))
+        
 
-    pwd = ""
-
-    new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
-
-    return f"Your New Password Is: {new_password} \n"
-
-
-print(pwd_generate())
+pwd_generate()
