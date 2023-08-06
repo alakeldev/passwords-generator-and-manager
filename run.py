@@ -38,14 +38,15 @@ get_user_name()
 def pwd_generate():
     """ 
     Function that prompts the user to enter the desired length of a new password 
-    Then it will Generate the new password from the static variable that we provided
+    Then It's going to check if the user value is a number between 4 and 70 to accept
+    and Generate the new password from the static variable that we provided
     """
     while True:
-        pwd_len = input("How many characters do you want your password to have: ").strip()
+        pwd_len = input("How many characters do you want your password to have? 'MIN = 4' & 'MAX = 70': ").strip()
         print("\n", end = "")
 
-        if re.search("^\d+$", pwd_len):
-            PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{"
+        if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
+            PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{+ZQ"
             pwd = ""
             new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
             print(f"Your New Password Is: {new_password} \n")
@@ -54,7 +55,7 @@ def pwd_generate():
         else:
             try:
                 raise ValueError(
-                    f"Write Only Numbers!"
+                    f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
                     )
             except ValueError as p:
 
