@@ -33,3 +33,24 @@ def get_user_name():
                 print(termcolor.colored(f"\nInvalid Name: {e}. Please try again.\n", color = "blue"))
 
 get_user_name()
+
+
+def pwd_generate():
+    """ 
+    Function that prompts the user to enter the desired length of a new password 
+    Then it will Generate the new password from the static variable that we provided
+    """
+    pwd_len = input("How many characters do you want your password to have: ")
+
+    print("\n", end = "")
+
+    PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/\@12345678}9[]ß{"
+
+    pwd = ""
+
+    new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
+
+    return f"Your New Password Is: {new_password} \n"
+
+
+print(pwd_generate())
