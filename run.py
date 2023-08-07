@@ -96,6 +96,8 @@ def main():
     """ 
     Function to Run All App Functions inside it
     Add a while condition that asks the user if wants to start the PWD Manager App
+    Add nested while condition to check with the user if wants to save a new password or even
+    check-view the previous ones.
     """
     get_user_name()
     pwd_generate()
@@ -105,7 +107,21 @@ def main():
             app_second_title = pyfiglet.figlet_format("Passwords Manager", width = 100)
             print(termcolor.colored(app_second_title, color= "blue"))
             print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color = "blue"))
-            break
+
+            while True:
+                user = input("Do you want to save a new password or view all your previous saved passwords? 'save' or 'view': ").lower().strip()
+                if user == "save":
+                    return False
+                elif user == "view":
+                    return False
+                else:
+                    try:
+                        raise ValueError(
+                            f"Please enter 'save' or 'view'. Sorry! no other values available"
+                            )
+                    except ValueError as e:
+                        print(termcolor.colored(f"\nInvalid Value: {e}. Please try again.\n", color = "blue"))
+
         elif passwords_manager == "n" or passwords_manager == "no":
             print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
             return False
