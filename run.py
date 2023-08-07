@@ -104,9 +104,10 @@ def main():
         if passwords_manager == "y" or passwords_manager == "yes":
             app_second_title = pyfiglet.figlet_format("Passwords Manager", width = 100)
             print(termcolor.colored(app_second_title, color= "blue"))
+            print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color = "blue"))
             break
         elif passwords_manager == "n" or passwords_manager == "no":
-            print(termcolor.colored("\nThank You! For Using Our Application.", color="blue"))
+            print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
             return False
         else:
             try:
