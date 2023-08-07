@@ -41,7 +41,7 @@ def pwd_generate():
     Then It's going to check if the user value is a number between 4 and 70 to accept it
     and Generate the new password from the static variable that we provided.
     Finally it will ask the user if wants another new password to generate a new one again.
-    - If "No":
+    - If "No": It will skip this part of the app and jump to the part of PWD Manager.
     - If "Other Values" it will show user msg(invalid value) to guide the user.
     Then starts again and push the user to put the expected values to proceed.
     """
@@ -93,8 +93,27 @@ def pwd_generate():
 
 
 def main():
-    ''' Function to Run All App Functions inside it '''
+    """ 
+    Function to Run All App Functions inside it
+    Add a while condition that asks the user if wants to start the PWD Manager App
+    """
     get_user_name()
     pwd_generate()
+    while True:
+        passwords_manager = input("\nDo you want to start the Passwords Manager Application? 'y/n' or 'yes/no': ").lower().strip()
+        if passwords_manager == "y" or passwords_manager == "yes":
+            app_second_title = pyfiglet.figlet_format("Passwords Manager", width = 100)
+            print(termcolor.colored(app_second_title, color= "blue"))
+            break
+        elif passwords_manager == "n" or passwords_manager == "no":
+            print(termcolor.colored("\nThank You! For Using Our Application.", color="blue"))
+            return False
+        else:
+            try:
+                raise ValueError(
+                    f"Please enter yes/no or y/n. Sorry! no other values available"
+                    )
+            except ValueError as z:
+                    print(termcolor.colored(f"\nInvalid Value: {z}.", color = "blue"))
 
 main()
