@@ -34,7 +34,7 @@ def get_user_name():
 
 
 
-def pwd_generate():
+def pwd_generator():
     """ 
     Function to ask the user if he wants to generate a new password? with three scenarios as per below:
     - if "yes": it prompts the user to enter the desired length of a new password 
@@ -90,17 +90,13 @@ def pwd_generate():
             except ValueError as e:
                 print(termcolor.colored(f"\nInvalid Value: {e}.\n", color = "blue"))
 
-
-
-def main():
-    """ 
-    Function to Run All App Functions inside it
-    Add a while condition that asks the user if wants to start the PWD Manager App
-    Add nested while condition to check with the user if wants to save a new password or even
-    check-view the previous ones.
+def pwd_manager():
     """
-    get_user_name()
-    pwd_generate()
+    a Function runs:
+    while condition that asks the user if wants to start the PWD Manager App
+    also a nested while condition to check with the user if wants to save a new password or even
+    to check-view the previous ones.
+    """
     while True:
         passwords_manager = input("\nDo you want to start the Passwords Manager Application? 'y/n' or 'yes/no': ").lower().strip()
         if passwords_manager == "y" or passwords_manager == "yes":
@@ -132,5 +128,12 @@ def main():
                     )
             except ValueError as e:
                     print(termcolor.colored(f"\nInvalid Value: {e}.", color = "blue"))
+
+
+def main():
+    ''' Function to Run All App Functions inside it '''
+    get_user_name()
+    pwd_generator()
+    pwd_manager()
 
 main()
