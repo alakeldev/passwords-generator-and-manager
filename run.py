@@ -69,15 +69,15 @@ def pwd_generate():
                                 raise ValueError(
                                 f"Please enter yes/no or y/n. Sorry! no other values available"
                                 )
-                            except ValueError as u:
-                                print(termcolor.colored(f"\nInvalid Value: {u}.\n", color = "blue"))
+                            except ValueError as e:
+                                print(termcolor.colored(f"\nInvalid Value: {e}.\n", color = "blue"))
                 else:
                     try:
                         raise ValueError(
                             f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
                             )
-                    except ValueError as p:
-                        print(termcolor.colored(f"\nInvalid Value: {p}. Please try again.\n", color = "blue"))
+                    except ValueError as e:
+                        print(termcolor.colored(f"Invalid Value: {e}. Please try again.\n", color = "blue"))
 
         elif ask_user == "n" or ask_user == "no":
             return False
@@ -87,8 +87,8 @@ def pwd_generate():
                 raise ValueError(
                     f"Please enter yes/no or y/n. Sorry! no other values available"
                             )
-            except ValueError as w:
-                print(termcolor.colored(f"\nInvalid Value: {w}.\n", color = "blue"))
+            except ValueError as e:
+                print(termcolor.colored(f"\nInvalid Value: {e}.\n", color = "blue"))
 
 
 
@@ -114,7 +114,7 @@ def main():
                 raise ValueError(
                     f"Please enter yes/no or y/n. Sorry! no other values available"
                     )
-            except ValueError as z:
-                    print(termcolor.colored(f"\nInvalid Value: {z}.", color = "blue"))
+            except ValueError as e:
+                    print(termcolor.colored(f"\nInvalid Value: {e}.", color = "blue"))
 
 main()
