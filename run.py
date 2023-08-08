@@ -2,6 +2,7 @@ import termcolor
 import pyfiglet
 import random
 import re
+import codecs
 
 
 def get_user_name():
@@ -105,8 +106,8 @@ def pwd_manager():
                     user_name = input("Username: ").strip()
                     new_password = input("Password: ").strip()
                     if user_name != "" and new_password != "" and len(user_name) > 2 and len(new_password) > 2:
-                        password_file = open("my-passwords.txt", "a")
-                        password_file.write(f"Username: {user_name} |=>| Password: {new_password}\n")
+                        password_file = codecs.open("my-passwords.txt", "a", encoding="utf-8")
+                        password_file.write(f"Username: {user_name} | Password: {new_password}\n")
                         password_file.close()
                         print(termcolor.colored("\nAdded Successfully!.\n", color="blue"))
                         continue
@@ -115,7 +116,7 @@ def pwd_manager():
                         continue
                 elif user == "view":
                     print("\nThe following are the saved Usernames and Passwords related to your accounts: ")
-                    password_file = open("my-passwords.txt", "r")
+                    password_file = codecs.open("my-passwords.txt", "r", encoding="utf-8")
                     for pwd in password_file.readlines():
                         print(termcolor.colored(pwd, color="blue"), end="")
                     password_file.close()
