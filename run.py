@@ -95,7 +95,7 @@ def pwd_manager():
     while True:
         passwords_manager = input("\nDo you want to start the Passwords Manager Application? 'y/n' or 'yes/no': ").lower().strip()
         if passwords_manager == "y" or passwords_manager == "yes":
-            app_second_title = pyfiglet.figlet_format("Passwords Manager", width=100)
+            app_second_title = pyfiglet.figlet_format("Passwords Manager", font="small", width=100)
             print(termcolor.colored(app_second_title, color="blue"))
             print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color="blue"))
 
@@ -147,7 +147,7 @@ def main():
     print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
 
 
-app_title = pyfiglet.figlet_format("Passwords Generator", width=100)
+app_title = pyfiglet.figlet_format("Passwords Generator", font="small", width=100)
 print(termcolor.colored(app_title, color="blue"))
 print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color="blue"))
 main()
