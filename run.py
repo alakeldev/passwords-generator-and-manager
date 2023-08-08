@@ -40,11 +40,11 @@ def pwd_generator():
     Then starts again and push the user to put the expected values to proceed.
     """
     while True:
-        ask_user = input("Do You Want to Generate a New Password? 'y/n' or 'yes/no': ").lower().strip()
+        ask_user = input("Do You Want to Generate a New Password?\n'y/n' or 'yes/no': ").lower().strip()
         if ask_user == "y" or ask_user == "yes":
 
             while True:
-                pwd_len = input("How many characters do you want your password to have? 'MIN = 4' & 'MAX = 70': ").strip()
+                pwd_len = input("How many characters do you want in your password?\n'Min = 4' & 'Max = 70': ").strip()
                 print("\n", end="")
                 if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
                     PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
@@ -53,7 +53,7 @@ def pwd_generator():
                     print(f"Your New Password Is: {new_password} \n")
 
                     while True:
-                        another_pwd = input("Do you want Another new Password? 'y/n' or 'yes/no': ").lower().strip()
+                        another_pwd = input("Do you want Another new Password?\n'y/n' or 'yes/no': ").lower().strip()
                         if another_pwd == "yes" or another_pwd == "y":
                             break
                         elif another_pwd == "no" or another_pwd == "n":
@@ -68,7 +68,7 @@ def pwd_generator():
                 else:
                     try:
                         raise ValueError(
-                            f"Enter a number between 4 and 70. This is the maximum range of characters that can be generated"
+                            f"Sorry! the maximum range of characters that can be generated are between 4 and 70"
                             )
                     except ValueError as e:
                         print(termcolor.colored(f"Invalid Value: {e}. Please try again.\n", color="blue"))
@@ -93,14 +93,14 @@ def pwd_manager():
     to check-view the previous ones.
     """
     while True:
-        passwords_manager = input("\nDo you want to start the Passwords Manager Application? 'y/n' or 'yes/no': ").lower().strip()
+        passwords_manager = input("\nDo you want to start the Passwords Manager Application?\n'y/n' or 'yes/no': ").lower().strip()
         if passwords_manager == "y" or passwords_manager == "yes":
             app_second_title = pyfiglet.figlet_format("Passwords Manager", font="small", width=100)
             print(termcolor.colored(app_second_title, color="blue"))
             print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color="blue"))
 
             while True:
-                user = input("Do you want to save a new password or view all your previous saved passwords? 'save' or 'view': ").lower().strip()
+                user = input("Do you want to save a new password or view all your previous saved passwords?\n'save' or 'view': ").lower().strip()
                 if user == "save":
                     user_name = input("Username: ").strip()
                     new_password = input("Password: ").strip()
