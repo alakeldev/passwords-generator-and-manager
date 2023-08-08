@@ -107,7 +107,17 @@ def pwd_manager():
             while True:
                 user = input("Do you want to save a new password or view all your previous saved passwords? 'save' or 'view': ").lower().strip()
                 if user == "save":
-                    return False
+                    user_name = input("Username: ").strip()
+                    new_password = input("Password: ").strip()
+                    if user_name != "" and new_password != "" and len(user_name) > 2 and len(new_password) > 2:
+                        password_file = open("my-passwords.txt", "a")
+                        password_file.write(f"Username: {user_name}, Password: {new_password}\n")
+                        password_file.close()
+                        print(termcolor.colored("\nAdded Successfully!.\n", color="blue"))
+                        continue
+                    else:
+                        print(termcolor.colored("\nThe empty field or even one-two characters are NOT accepted as a Values. Please again check your choice!\n", color="blue"))
+                        continue
                 elif user == "view":
                     return False
                 else:
