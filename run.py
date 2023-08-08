@@ -119,6 +119,11 @@ def pwd_manager():
                         print(termcolor.colored("\nThe empty field or even one-two characters are NOT accepted as a Values. Please again check your choice!\n", color="blue"))
                         continue
                 elif user == "view":
+                    print("\nThe following are the saved Usernames and Passwords related to your accounts: ")
+                    password_file = open("my-passwords.txt", "r")
+                    for pwd in password_file.readlines():
+                        print(termcolor.colored(pwd , color="blue"), end="")
+                    password_file.close()
                     return False
                 else:
                     try:
@@ -129,7 +134,6 @@ def pwd_manager():
                         print(termcolor.colored(f"\nInvalid Value: {e}. Please try again.\n", color = "blue"))
 
         elif passwords_manager == "n" or passwords_manager == "no":
-            print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
             return False
         else:
             try:
@@ -145,5 +149,6 @@ def main():
     get_user_name()
     pwd_generator()
     pwd_manager()
+    print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
 
 main()
