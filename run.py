@@ -45,9 +45,9 @@ def pwd_generator():
         if ask_user == "y" or ask_user == "yes":
 
             while True:
-                pwd_len = input("How many characters do you want in your password?\n'Min = 4' & 'Max = 70': ").strip()
+                pwd_len = input("How many characters do you want in your password?\n'Min = 4' & 'Max = 40': ").strip()
                 print("\n", end="")
-                if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) <= 70:
+                if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) < 41:
                     PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
                     pwd = ""
                     new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="blue")
@@ -69,7 +69,7 @@ def pwd_generator():
                 else:
                     try:
                         raise ValueError(
-                            f"Sorry! the maximum range of characters that can be generated are between 4 and 70"
+                            f"Sorry, the maximum Characters that can be generated are between 4 and 40 Chars only!\nNo other Values accepted"
                             )
                     except ValueError as e:
                         print(termcolor.colored(f"Invalid Value: {e}. Please try again.\n", color="blue"))
@@ -145,7 +145,7 @@ def main():
     get_user_name()
     pwd_generator()
     pwd_manager()
-    print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
+    print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.\n", color="blue"))
 
 
 app_title = pyfiglet.figlet_format("Passwords Generator", font="small", width=100)
