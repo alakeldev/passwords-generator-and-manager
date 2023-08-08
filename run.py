@@ -3,12 +3,6 @@ import pyfiglet
 import random
 import re
 
-# Application Title with ASCII art and blue color
-app_title = pyfiglet.figlet_format("Passwords Generator", width = 100)
-print(termcolor.colored(app_title, color= "blue"))
-
-print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color = "blue"))
-
 def get_user_name():
     """ 
     Simple Function To Get the User Full Name, 
@@ -31,8 +25,6 @@ def get_user_name():
                 )
             except ValueError as e:
                 print(termcolor.colored(f"\nInvalid Name: {e}. Please try again.\n", color = "blue"))
-
-
 
 def pwd_generator():
     """ 
@@ -111,7 +103,7 @@ def pwd_manager():
                     new_password = input("Password: ").strip()
                     if user_name != "" and new_password != "" and len(user_name) > 2 and len(new_password) > 2:
                         password_file = open("my-passwords.txt", "a")
-                        password_file.write(f"Username: {user_name}, Password: {new_password}\n")
+                        password_file.write(f"Username: {user_name} |=>| Password: {new_password}\n")
                         password_file.close()
                         print(termcolor.colored("\nAdded Successfully!.\n", color="blue"))
                         continue
@@ -143,7 +135,6 @@ def pwd_manager():
             except ValueError as e:
                     print(termcolor.colored(f"\nInvalid Value: {e}.", color = "blue"))
 
-
 def main():
     ''' Function to Run All App Functions inside it '''
     get_user_name()
@@ -151,4 +142,7 @@ def main():
     pwd_manager()
     print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.", color="blue"))
 
+app_title = pyfiglet.figlet_format("Passwords Generator", width = 100)
+print(termcolor.colored(app_title, color= "blue"))
+print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color = "blue"))
 main()
