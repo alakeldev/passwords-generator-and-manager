@@ -26,7 +26,7 @@ def get_user_name():
                     f"Please Write a Correct and Real Name Using Letters Only!"
                 )
             except ValueError as e:
-                print(termcolor.colored(f"\nInvalid Name: {e}. Please try again.\n", color="blue"))
+                print(termcolor.colored(f"\nInvalid Name: {e}.\n", color="blue"))
 
 
 def pwd_generator():
