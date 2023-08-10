@@ -16,14 +16,14 @@ def get_user_name():
         fname = input("Please Enter Your First Name: ").strip().capitalize()
         lname = input("Please Enter Your Last Name: ").strip().capitalize()
 
-        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname) and len(fname) > 2 and len(lname) > 2:
+        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname) and len(fname) > 1 and len(lname) > 1:
             print(termcolor.colored(f"\nHi {fname} {lname}, Nice To See You!. \n", color="blue"))
             break
 
         else:
             try:
                 raise ValueError(
-                    f"Please Write a Correct and Real Name Using Letters Only!"
+                    f"Please Write Real-Correct Name Using Letters Only!"
                 )
             except ValueError as e:
                 print(termcolor.colored(f"\nInvalid Name: {e}.\n", color="blue"))
@@ -45,7 +45,7 @@ def pwd_generator():
         if ask_user == "y" or ask_user == "yes":
 
             while True:
-                pwd_len = input("How many characters do you want in your password?\n'Min = 4' & 'Max = 40': ").strip()
+                pwd_len = input("How many Chars do you want in your password?\n'Min = 4' & 'Max = 40': ").strip()
                 print("\n", end="")
                 if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) < 41:
                     PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
@@ -69,7 +69,7 @@ def pwd_generator():
                 else:
                     try:
                         raise ValueError(
-                            f"Sorry, the maximum Characters that can be generated are between 4 and 40 Chars only!\nNo other Values accepted"
+                            f"Sorry, the maximum Characters that can be generated are between 4 to 40 Chars only!\nNo other Values accepted"
                             )
                     except ValueError as e:
                         print(termcolor.colored(f"Invalid Value: {e}. Please try again.\n", color="blue"))
@@ -101,7 +101,7 @@ def pwd_manager():
             print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color="blue"))
 
             while True:
-                user = input("Do you want to save a new password or only view all your previous saved passwords?\n'save' or 'view': ").lower().strip()
+                user = input("Do you want to save a new password or only view the previous ones?\n'save' or 'view': ").lower().strip()
                 if user == "save":
                     user_name = input("Username: ").strip()
                     new_password = input("Password: ").strip()
@@ -112,7 +112,7 @@ def pwd_manager():
                         print(termcolor.colored("\nAdded Successfully!.\n", color="blue"))
                         continue
                     else:
-                        print(termcolor.colored("\nThe empty field or even one-two characters are NOT accepted as a Values. Please again check your choice!\n", color="blue"))
+                        print(termcolor.colored("\nThe empty field or even one-two Chars are NOT accepted as a Values.\nAgain please check your choice!\n", color="blue"))
                         continue
                 elif user == "view":
                     print("\nThe following are the saved Usernames and Passwords related to your accounts: ")
