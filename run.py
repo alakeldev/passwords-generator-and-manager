@@ -101,7 +101,7 @@ def pwd_manager():
             print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color="blue"))
 
             while True:
-                user = input("Do you want to save a new password or view all your previous saved passwords?\n'save' or 'view': ").lower().strip()
+                user = input("Do you want to save a new password or only view all your previous saved passwords?\n'save' or 'view': ").lower().strip()
                 if user == "save":
                     user_name = input("Username: ").strip()
                     new_password = input("Password: ").strip()
@@ -145,10 +145,10 @@ def main():
     get_user_name()
     pwd_generator()
     pwd_manager()
-    print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.\n", color="blue"))
 
 
 app_title = pyfiglet.figlet_format("Passwords Generator", font="small", width=100)
 print(termcolor.colored(app_title, color="blue"))
 print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color="blue"))
 main()
+print(termcolor.colored("\nGoodbye! Thank You For Using Our Applications.\n", color="blue"))
