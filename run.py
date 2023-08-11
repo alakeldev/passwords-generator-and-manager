@@ -152,7 +152,8 @@ def pwd_manager_run():
                 password_file.close()
                 print(termcolor.colored("\nSaved Successfully!.\n", color="green"))
             else:
-                print(termcolor.colored("\Empty fields are NOT accepted as Values.\nAgain please check your choice!\n", color="red"))
+                print(termcolor.colored("\nEmpty fields are NOT accepted as Values.", color="red"), end="")
+                print(termcolor.colored("\nAgain please check your choice!\n", color="red"))
                 continue
         elif user == "view":
             password_file = codecs.open("my-passwords.txt", "r", encoding="utf-8")
