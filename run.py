@@ -16,8 +16,18 @@ def get_user_name():
     while True:
         fname = input("Please enter your First Name: ").strip().capitalize()
         lname = input("Please enter your Last Name: ").strip().capitalize()
-        if re.search("^[A-z]+$", fname) and re.search("^[A-z]+$", lname) and len(fname) > 1 and len(lname) > 1:
-            print(termcolor.colored(f"\nHi {fname} {lname}, nice to see you!. \n", color="green"))
+        if (
+            re.search("^[A-z]+$", fname)
+            and re.search("^[A-z]+$", lname)
+            and len(fname) > 1
+            and len(lname) > 1
+        ):
+            print(
+                termcolor.colored(
+                    f"\nHi {fname} {lname}, nice to see you!. \n",
+                    color="green",
+                )
+            )
             break
         else:
             try:
@@ -25,7 +35,9 @@ def get_user_name():
                     f"Please enter real-correct Name using letters only!"
                 )
             except ValueError as e:
-                print(termcolor.colored(f"\nInvalid Name: {e}.\n", color="red"))
+                print(
+                    termcolor.colored(f"\nInvalid Name: {e}.\n", color="red")
+                )
 
 
 def pwd_generator():
@@ -35,7 +47,12 @@ def pwd_generator():
     Try: to raise a valueError if user enter other values or empty
     """
     while True:
-        ask_user = input("Do you want to generate a new Password?\n'y/n' or 'yes/no': ").lower().strip()
+        ask_user = (
+            input(
+                "Do you want to generate a new Password?\n'y/n' or 'yes/no': "
+            ).lower()
+            .strip()
+        )
         if ask_user == "y" or ask_user == "yes":
             pwd_chars_number()
             break
@@ -45,10 +62,12 @@ def pwd_generator():
         else:
             try:
                 raise ValueError(
-                    f"Please enter yes/no or y/n. Sorry! no other values available"
-                            )
+                    f"Please enter only [yes/no OR y/n]. No other values"
+                )
             except ValueError as e:
-                print(termcolor.colored(f"\nInvalid Value: {e}.\n", color="red"))
+                print(
+                    termcolor.colored(f"\nInvalid Value: {e}.\n", color="red")
+                )
 
 
 def pwd_chars_number():
@@ -59,12 +78,16 @@ def pwd_chars_number():
     (only numbers and between 4-40)
     """
     while True:
-        pwd_len = input("How many Chars want in your Password?\n'Min = 4' & 'Max = 40': ").strip()
+        print("\nHow many Chars do you want in your new Password?")
+        pwd_len = input("'Min = 4' & 'Max = 40': ").strip()
         print("\n", end="")
         if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) < 41:
             PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
             pwd = ""
-            new_password = termcolor.colored(pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))), color="green")
+            new_password = termcolor.colored(
+                pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))),
+                color="green",
+            )
             print(f"Your New Password Is: {new_password} \n")
             pwd_second_generator()
             return False
@@ -72,9 +95,13 @@ def pwd_chars_number():
             try:
                 raise ValueError(
                     f"Please enter only Numbers and only Between(4 to 40).\n"
-                    )
+                )
             except ValueError as e:
-                print(termcolor.colored(f"Invalid Value: {e}Please try again.\n", color="red"))
+                print(
+                    termcolor.colored(
+                        f"Invalid Value: {e}Please try again.\n", color="red"
+                    )
+                )
 
 
 def pwd_second_generator():
@@ -85,7 +112,11 @@ def pwd_second_generator():
     Try: to raise a valueError if user enter other values or empty
     """
     while True:
-        another_pwd = input("Do you want another new Password?\n'y/n' or 'yes/no': ").lower().strip()
+        another_pwd = (
+            input("Do you want another new Password?\n'y/n' or 'yes/no': ")
+            .lower()
+            .strip()
+        )
         if another_pwd == "yes" or another_pwd == "y":
             pwd_chars_number()
             return False
@@ -95,10 +126,12 @@ def pwd_second_generator():
         else:
             try:
                 raise ValueError(
-                    f"Please enter yes/no or y/n. Sorry! no other values available"
-                    )
+                    f"Please enter only [yes/no OR y/n]. No other values"
+                )
             except ValueError as e:
-                print(termcolor.colored(f"\nInvalid Value: {e}.\n", color="red"))
+                print(
+                    termcolor.colored(f"\nInvalid Value: {e}.\n", color="red")
+                )
 
 
 def pwd_manager_start():
@@ -108,11 +141,19 @@ def pwd_manager_start():
     Try: to raise a valueError if user enter other values or empty
     """
     while True:
-        passwords_manager = input("\nDo you want to start the Passwords Manager Application?\n'y/n' or 'yes/no': ").lower().strip()
+        print("\nDo you want to start the Passwords Manager Application?")
+        passwords_manager = input("'y/n' or 'yes/no': ").lower().strip()
         if passwords_manager == "y" or passwords_manager == "yes":
-            app_second_title = pyfiglet.figlet_format("Passwords Manager", font="small", width=100)
+            app_second_title = pyfiglet.figlet_format(
+                "Passwords Manager", font="small", width=100
+                )
             print(termcolor.colored(app_second_title, color="green"))
-            print(termcolor.colored("Welcome To Your Passwords Manager Application!\n", color="green"))
+            print(
+                termcolor.colored(
+                    "Welcome To Your Passwords Manager Application!\n",
+                    color="green",
+                )
+            )
             pwd_manager_run()
             break
         elif passwords_manager == "n" or passwords_manager == "no":
@@ -121,7 +162,7 @@ def pwd_manager_start():
         else:
             try:
                 raise ValueError(
-                    f"Please enter yes/no or y/n. Sorry! no other values available"
+                    f"Please enter only [yes/no OR y/n]. No other values"
                     )
             except ValueError as e:
                 print(termcolor.colored(f"\nInvalid Value: {e}.", color="red"))
@@ -140,25 +181,51 @@ def pwd_manager_run():
     Try: to raise a valueError if user enter other than (Save and View)
     """
     while True:
-        q_msg = "Do you want to save new Password & its Username or only view previous ones?"
-        print(q_msg)
+        q_msg1 = "Do you want to save new Password"
+        q_msg2 = "its Username or only view previous ones?"
+        print(q_msg1 + " & " + q_msg2)
         user = input("'save' or 'view': ").lower().strip()
         if user == "save":
             msg = "\nPlease don't enter empty Fields or Even 1-2 Chars!"
             print(termcolor.colored(msg, color="green"))
             user_name = input("Username: ").strip()
             new_password = input("Password: ").strip()
-            if user_name != "" and new_password != "" and len(user_name) > 2 and len(new_password) > 2:
-                password_file = codecs.open("my-passwords.txt", "a", encoding="utf-8")
-                password_file.write(f"Username: {user_name} | Password: {new_password}\n")
+            if (
+                user_name != ""
+                and new_password != ""
+                and len(user_name) > 2
+                and len(new_password) > 2
+            ):
+                password_file = codecs.open(
+                    "my-passwords.txt", "a", encoding="utf-8"
+                )
+                password_file.write(
+                    f"Username: {user_name} | Password: {new_password}\n"
+                )
                 password_file.close()
-                print(termcolor.colored("\nSaved Successfully!.\n", color="green"))
+                print(
+                    termcolor.colored(
+                        "\nSaved Successfully!.\n", color="green"
+                    )
+                )
             else:
-                print(termcolor.colored("\nEmpty fields or even 1-2 Chars are NOT accepted.", color="red"), end="")
-                print(termcolor.colored("\nPlease again check your choice!\n", color="red"))
+                print(
+                    termcolor.colored(
+                        "\nEmpty fields or even 1-2 Chars are NOT accepted.",
+                        color="red",
+                        )
+                )
+                print(
+                    termcolor.colored(
+                        "\nAgain check your choice between Save and View.",
+                        color="red",
+                    )
+                )
                 continue
         elif user == "view":
-            password_file = codecs.open("my-passwords.txt", "r", encoding="utf-8")
+            password_file = codecs.open(
+                "my-passwords.txt", "r", encoding="utf-8"
+            )
             if os.path.getsize("my-passwords.txt") != 0:
                 print("\nThe following are the saved ones: \n")
                 for pwd in password_file.readlines():
@@ -170,18 +237,27 @@ def pwd_manager_run():
                 print(termcolor.colored(msg, color="red"))
         else:
             try:
-                raise ValueError(
-                    f"Please enter only 'save' or 'view'."
-                    )
+                raise ValueError(f"Please enter only 'save' or 'view'.")
             except ValueError as e:
-                print(termcolor.colored(f"\nInvalid Value: {e}. Please try again.\n", color="red"))
+                print(
+                    termcolor.colored(
+                        f"\nInvalid Value: {e}. Please try again.\n",
+                        color="red",
+                    )
+                )
 
 
 def main():
     ''' Main Function to run the main App code inside it '''
-    app_title = pyfiglet.figlet_format("Passwords Generator", font="small", width=100)
+    app_title = pyfiglet.figlet_format(
+        "Passwords Generator", font="small", width=100
+    )
     print(termcolor.colored(app_title, color="green"))
-    print(termcolor.colored("Welcome To Your Passwords Generator Application!\n", color="green"))
+    print(
+        termcolor.colored(
+            "Welcome To Your Passwords Generator Application!\n", color="green"
+        )
+    )
     get_user_name()
     pwd_generator()
     print("Goodbye! Thank You For Using Our Applications.\n")
