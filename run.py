@@ -73,16 +73,19 @@ def pwd_generator():
 def pwd_chars_number():
     """
     While: to ask the user how many Chars wants in new PWD
-    If: to control user input (only numbers and between 3-40)
+    If: to control user input (only numbers and between 4-40)
     Try: to raise a valueError if user enter other than
-    (only numbers and between 4-40)
+    numbers and only between 4-40
     """
     while True:
         print("\nHow many Chars do you want in your new Password?")
         pwd_len = input("'Min = 4' & 'Max = 40': ").strip()
         print("\n", end="")
         if re.search("^\d+$", pwd_len) and 3 < int(pwd_len) < 41:
-            PWD_CHARACTERS = "qwertzuiopü+asdfghjklöä#yxcvbnm,.-!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
+            PWD_CHARACTERS = (
+                "qwertzuiopü+asdfghjklöä#yxcvbnm,.-"
+                "!§$%&/()=?ß#><-*/@\12345678}9[]ß{+ZQ"
+            )
             pwd = ""
             new_password = termcolor.colored(
                 pwd.join(random.sample(PWD_CHARACTERS, int(pwd_len))),
