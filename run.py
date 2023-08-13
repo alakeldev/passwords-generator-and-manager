@@ -43,20 +43,23 @@ def get_user_name():
 def pwd_generator():
     """
     While: to ask the user if wants to generate new password
-    If: to check the three possible scenarios:(yes,no,other)
+    If: to check the three possible scenarios:(yes,no|exit,other)
     Try: to raise a valueError if user enter other values or empty
     """
     while True:
+        exit_msg = termcolor.colored("'exit' => to exit the App", color="red")
         ask_user = (
             input(
-                "Do you want to generate a new Password?\n'y/n' or 'yes/no': "
+                "Do you want to generate a new Password?\n"
+                f"{exit_msg}\n"
+                "'y/n' or 'yes/no': "
             ).lower()
             .strip()
         )
         if ask_user == "y" or ask_user == "yes":
             pwd_chars_number()
-            break
-        elif ask_user == "n" or ask_user == "no":
+            return False
+        elif ask_user == "n" or ask_user == "no" or ask_user =="exit":
             pwd_manager_start()
             return False
         else:
@@ -158,7 +161,7 @@ def pwd_manager_start():
                 )
             )
             pwd_manager_run()
-            break
+            return False
         elif passwords_manager == "n" or passwords_manager == "no":
             print(termcolor.colored("\nOK, See You Later!.\n", color="green"))
             return False
@@ -188,8 +191,7 @@ def pwd_manager_run():
         q_msg = ("Do you want to save new Password &"
                 " its Username or only view previous ones?"
         )
-        exit_msg = ("'exit' => to exit the App"
-        )
+        exit_msg = "'exit' => to exit the App"
         print(q_msg)
         print(termcolor.colored(exit_msg , color="red"))
         user = input("'save' or 'view': ").lower().strip()
@@ -239,13 +241,12 @@ def pwd_manager_run():
                 for pwd in password_file.readlines():
                     print(termcolor.colored(pwd, color="green"))
                     password_file.close()
-                break
             else:
                 msg = "\nYou don't have previous saved Passwords!\n"
                 print(termcolor.colored(msg, color="red"))
         elif user == "exit":
             print("\n", end="")
-            break
+            return False
         else:
             try:
                 raise ValueError(f"Please enter only 'save' or 'view'.")
