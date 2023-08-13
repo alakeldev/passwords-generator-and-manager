@@ -59,7 +59,7 @@ def pwd_generator():
         if ask_user == "y" or ask_user == "yes":
             pwd_chars_number()
             return False
-        elif ask_user == "n" or ask_user == "no" or ask_user =="exit":
+        elif ask_user == "n" or ask_user == "no" or ask_user == "exit":
             pwd_manager_start()
             return False
         else:
@@ -188,12 +188,13 @@ def pwd_manager_run():
     Add exit option to the function
     """
     while True:
-        q_msg = ("Do you want to save new Password &"
-                " its Username or only view previous ones?"
+        q_msg = (
+            "Do you want to save new Password &"
+            " its Username or only view previous ones?"
         )
         exit_msg = "'exit' => to exit the App"
         print(q_msg)
-        print(termcolor.colored(exit_msg , color="red"))
+        print(termcolor.colored(exit_msg, color="red"))
         user = input("'save' or 'view': ").lower().strip()
         if user == "save":
             msg = "\nPlease don't enter empty Fields or Even 1-2 Chars!"
