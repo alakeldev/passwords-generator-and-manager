@@ -28,7 +28,7 @@ def get_user_name():
                     color="green",
                 )
             )
-            break
+            return False
         else:
             try:
                 raise ValueError(
@@ -232,7 +232,6 @@ def pwd_manager_run():
                         color="red",
                     )
                 )
-                continue
         elif user == "view":
             password_file = codecs.open(
                 "my-passwords.txt", "r", encoding="utf-8"
