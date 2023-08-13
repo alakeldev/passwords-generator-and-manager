@@ -182,11 +182,16 @@ def pwd_manager_run():
     For inside view scenario: to loop on each line inside the file
     and print it on terminal
     Try: to raise a valueError if user enter other than (Save and View)
+    Add exit option to the function
     """
     while True:
-        q_msg1 = "Do you want to save new Password"
-        q_msg2 = "its Username or only view previous ones?"
-        print(q_msg1 + " & " + q_msg2)
+        q_msg = ("Do you want to save new Password &"
+                " its Username or only view previous ones?"
+        )
+        exit_msg = ("'exit' => to exit the App"
+        )
+        print(q_msg)
+        print(termcolor.colored(exit_msg , color="red"))
         user = input("'save' or 'view': ").lower().strip()
         if user == "save":
             msg = "\nPlease don't enter empty Fields or Even 1-2 Chars!"
@@ -238,6 +243,9 @@ def pwd_manager_run():
             else:
                 msg = "\nYou don't have previous saved Passwords!\n"
                 print(termcolor.colored(msg, color="red"))
+        elif user == "exit":
+            print("\n", end="")
+            break
         else:
             try:
                 raise ValueError(f"Please enter only 'save' or 'view'.")
