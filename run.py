@@ -4,6 +4,7 @@ import random
 import re
 import codecs
 import os
+from cryptography.fernet import Fernet
 
 
 def get_user_name():
@@ -150,6 +151,7 @@ def pwd_manager_start():
         print("\nDo you want to start the Passwords Manager Application?")
         passwords_manager = input("'y/n' or 'yes/no': ").lower().strip()
         if passwords_manager == "y" or passwords_manager == "yes":
+            sym_key()
             app_second_title = pyfiglet.figlet_format(
                 "Passwords Manager", font="small", width=100
                 )
@@ -257,6 +259,17 @@ def pwd_manager_run():
                         color="red",
                     )
                 )
+
+
+def sym_key():
+    """
+    Function to generate the symmetric key (Security-key)
+    Save this key inside new file(the-security-key.key)
+    """
+    the_sym_key = Fernet.generate_key()
+    sym_new_file = open("the-security-key.key", "wb")
+    sym_new_file.write(the_sym_key)
+    sym_new_file.close()
 
 
 def main():
