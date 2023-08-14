@@ -221,6 +221,7 @@ def pwd_manager_run():
                         "\nSaved Successfully!.\n", color="green"
                     )
                 )
+                encrypt_data()
             else:
                 print(
                     termcolor.colored(
@@ -270,6 +271,29 @@ def sym_key():
     sym_new_file = open("the-security-key.key", "wb")
     sym_new_file.write(the_sym_key)
     sym_new_file.close()
+
+
+def encrypt_data():
+    """
+    Function to take the data from the file (my-passwords.txt)
+    and Encrypt these data with the symmetric key
+    then create a new file (my-encrypted-data.txt) and
+    store the encryption data inside it
+    """
+    sym_file = open("the-security-key.key", "rb")
+    sym_key = sym_file.read()
+    sym_file.close()
+
+    pwds_file = open("my-passwords.txt", "rb")
+    pwds_file_data = pwds_file.read()
+    pwds_file.close()
+
+    f_key = Fernet(sym_key)
+    encrypted_data = f_key.encrypt(pwds_file_data)
+
+    encrypted_file = open("my-encrypted-data.txt", "wb")
+    encrypted_file.write(encrypted_data)
+    encrypted_file.close()
 
 
 def main():
