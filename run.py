@@ -241,9 +241,7 @@ def pwd_manager_run():
             )
             if os.path.getsize("my-passwords.txt") != 0:
                 print("\nThe following are the saved ones: \n")
-                for pwd in password_file.readlines():
-                    print(termcolor.colored(pwd, color="green"))
-                    password_file.close()
+                decrypt_data()
             else:
                 msg = "\nYou don't have previous saved Passwords!\n"
                 print(termcolor.colored(msg, color="red"))
@@ -283,17 +281,31 @@ def encrypt_data():
     sym_file = open("the-security-key.key", "rb")
     sym_key = sym_file.read()
     sym_file.close()
-
     pwds_file = open("my-passwords.txt", "rb")
     pwds_file_data = pwds_file.read()
     pwds_file.close()
-
     f_key = Fernet(sym_key)
     encrypted_data = f_key.encrypt(pwds_file_data)
-
     encrypted_file = open("my-encrypted-data.txt", "wb")
     encrypted_file.write(encrypted_data)
     encrypted_file.close()
+
+
+def decrypt_data():
+    """
+    Function to take the encrypted data from(my-encrypted-data.txt)
+    and decrypt these data with same symmetric key
+    Then print the normal data on the terminal
+    """
+    sym_file = open("the-security-key.key", "rb")
+    sym_key = sym_file.read()
+    sym_file.close()
+    encrypted_file = open("my-encrypted-data.txt", "rb")
+    encrypted_data = encrypted_file.read()
+    encrypted_file.close()
+    f_key = Fernet(sym_key)
+    decrypted_data = f_key.decrypt(encrypted_data)
+    print(termcolor.colored(decrypted_data.decode(), color="green"))
 
 
 def main():
