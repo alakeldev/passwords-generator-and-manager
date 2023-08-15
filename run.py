@@ -248,7 +248,11 @@ def pwd_manager_run():
                 print(termcolor.colored(msg, color="red"))
         elif user == "exit":
             print("\n", end="")
-            return False
+            if os.path.getsize("my-passwords.txt") != 0:
+                delete_data_start()
+                return False
+            else:
+                return False
         else:
             try:
                 raise ValueError(f"Please enter only 'save' or 'view'.")
