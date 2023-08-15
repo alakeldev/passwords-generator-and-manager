@@ -241,6 +241,7 @@ def pwd_manager_run():
             )
             if os.path.getsize("my-passwords.txt") != 0:
                 print("\nThe following are the saved ones: \n")
+                encrypt_data()
                 decrypt_data()
             else:
                 msg = "\nYou don't have previous saved Passwords!\n"
