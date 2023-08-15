@@ -318,6 +318,47 @@ def delete_files_content():
         my_encry_file.close()
 
 
+def delete_data_start():
+    """
+    Function to ask the user if wants to delete all
+    saved passwords and usernames, and it works with
+    three possible scenarios:(yes,no,other)
+    """
+    while True:
+        print(
+            termcolor.colored(
+                "Would you like to delete all "
+                "previously saved data before exiting?",
+                color="yellow"
+            )
+        )
+        remove_data = input("'y/n' or 'yes/no': ").lower().strip()
+        if remove_data == "y" or remove_data == "yes":
+            delete_files_content()
+            print(
+                termcolor.colored(
+                    "\nAll Deleted Successfully!\n",
+                    color="green"
+                )
+            )
+            return False
+        elif remove_data == "n" or remove_data == "no":
+            print("\n", end="")
+            return False
+        else:
+            try:
+                raise ValueError(
+                    f"Please enter only [yes/no OR y/n]. No other values"
+                )
+            except ValueError as e:
+                print(
+                    termcolor.colored(
+                        f"\nInvalid Value: {e}. Please try again.\n",
+                        color="red",
+                    )
+                )
+
+
 def main():
     ''' Main Function to run the main App code inside it '''
     app_title = pyfiglet.figlet_format(
