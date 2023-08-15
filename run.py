@@ -309,6 +309,15 @@ def decrypt_data():
     print(termcolor.colored(decrypted_data.decode(), color="green"))
 
 
+def delete_files_content():
+    ''' Function to delete the content of my saved PWDs and usernames '''
+    my_pwd_file = open("my-passwords.txt", "w")
+    my_pwd_file.close()
+    if os.path.isfile("my-encrypted-data.txt"):
+        my_encry_file = open("my-encrypted-data.txt", "w")
+        my_encry_file.close()
+
+
 def main():
     ''' Main Function to run the main App code inside it '''
     app_title = pyfiglet.figlet_format(
