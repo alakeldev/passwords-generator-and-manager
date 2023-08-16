@@ -41,10 +41,10 @@ def get_user_name():
                 )
 
 
-def pwd_generator():
+def pwd_generator_start():
     """
     While: to ask the user if wants to generate new password
-    If: to check the three possible scenarios:(yes,no|exit,other)
+    If: to check the four possible scenarios:(yes,no,exit,other)
     Try: to raise a valueError if user enter other values or empty
     """
     while True:
@@ -60,7 +60,11 @@ def pwd_generator():
         if ask_user == "y" or ask_user == "yes":
             pwd_chars_number()
             return False
-        elif ask_user == "n" or ask_user == "no" or ask_user == "exit":
+        elif ask_user == "n" or ask_user == "no":
+            exit_pwd_generator()
+            return False
+        elif ask_user == "exit":
+            print(termcolor.colored("\nGoodbye! See You Later", color="green"))
             pwd_manager_start()
             return False
         else:
@@ -71,6 +75,39 @@ def pwd_generator():
             except ValueError as e:
                 print(
                     termcolor.colored(f"\nInvalid Value: {e}.\n", color="red")
+                )
+
+
+def exit_pwd_generator():
+    """
+    Function for asking the user if wants
+    exit passwords generator application or not,
+    through while: three possible scenarios:(yes,no,other)
+    """
+    while True:
+        print(
+            termcolor.colored(
+                "\nDo you want to exit the passwords generator application?",
+                color="yellow"
+            )
+        )
+        exit_gen = input("'y/n' or 'yes/no': ").lower().strip()
+        if exit_gen == "y" or exit_gen == "yes":
+            print(termcolor.colored("\nGoodbye! See You Later", color="green"))
+            pwd_manager_start()
+            return False
+        elif exit_gen == "n" or exit_gen == "n":
+            print("\n", end="")
+            pwd_generator_start()
+            return False
+        else:
+            try:
+                raise ValueError(
+                    f"Please enter only [yes/no OR y/n]. No other values"
+                )
+            except ValueError as e:
+                print(
+                    termcolor.colored(f"\nInvalid Value: {e}.", color="red")
                 )
 
 
@@ -128,7 +165,7 @@ def pwd_second_generator():
             pwd_chars_number()
             return False
         elif another_pwd == "no" or another_pwd == "n":
-            pwd_manager_start()
+            exit_pwd_generator()
             return False
         else:
             try:
@@ -179,7 +216,7 @@ def pwd_manager_start():
 def pwd_manager_run():
     """
     While: to ask user if wants to save new pwd or only view the old ones
-    If: to check the three possible scenarios:(save,view,other)
+    If: to check the four possible scenarios:(save,view,exit,other)
     If nested inside save scenario: to check the user inputs
     (not empty & more than two Chars)
     If nested inside view scenario: to check if the file is empty
@@ -231,8 +268,8 @@ def pwd_manager_run():
                 )
                 print(
                     termcolor.colored(
-                        "\nAgain check your choice between Save and View.",
-                        color="red",
+                        "\nAgain please check your choice below:",
+                        color="yellow",
                     )
                 )
         elif user == "view":
@@ -375,7 +412,7 @@ def main():
         )
     )
     get_user_name()
-    pwd_generator()
+    pwd_generator_start()
     print("Goodbye! Thank You For Using Our Applications.\n")
 
 
