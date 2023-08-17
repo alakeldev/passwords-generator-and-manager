@@ -6,6 +6,11 @@ import codecs
 import os
 from cryptography.fernet import Fernet
 
+MIN_CHARS_IN_NAME_AND_PWD = 1
+SYMMETRIC_KEY_FILE = "the-security-key.key"
+PWDS_FILE = "my-passwords.txt"
+PWDS_ECRYPTED_FILE = "my-encrypted-data.txt"
+
 
 def get_user_name():
     """
@@ -20,8 +25,8 @@ def get_user_name():
         if (
             re.search("^[A-z]+$", fname)
             and re.search("^[A-z]+$", lname)
-            and len(fname) > 1
-            and len(lname) > 1
+            and len(fname) > MIN_CHARS_IN_NAME_AND_PWD
+            and len(lname) > MIN_CHARS_IN_NAME_AND_PWD
         ):
             global hi_msg
             hi_msg = f"\nHi {fname} {lname}, nice to see you!.\n"
@@ -241,11 +246,11 @@ def pwd_manager_run():
             if (
                 user_name != ""
                 and new_password != ""
-                and len(user_name) > 2
-                and len(new_password) > 2
+                and len(user_name) > MIN_CHARS_IN_NAME_AND_PWD
+                and len(new_password) > MIN_CHARS_IN_NAME_AND_PWD
             ):
                 password_file = codecs.open(
-                    "my-passwords.txt", "a", encoding="utf-8"
+                    PWDS_FILE, "a", encoding="utf-8"
                 )
                 password_file.write(
                     f"Username: {user_name} | Password: {new_password}\n"
@@ -260,7 +265,7 @@ def pwd_manager_run():
             else:
                 print(
                     termcolor.colored(
-                        "\nEmpty fields or even 1-2 Chars are NOT accepted.",
+                        "\nEmpty fields or one Char are NOT accepted.",
                         color="red",
                         )
                 )
@@ -272,9 +277,9 @@ def pwd_manager_run():
                 )
         elif user == "view":
             password_file = codecs.open(
-                "my-passwords.txt", "r", encoding="utf-8"
+                PWDS_FILE, "r", encoding="utf-8"
             )
-            if os.path.getsize("my-passwords.txt") != 0:
+            if os.path.getsize(PWDS_FILE) != 0:
                 print("\nThe following are the saved ones: \n")
                 encrypt_data()
                 decrypt_data()
@@ -283,7 +288,7 @@ def pwd_manager_run():
                 print(termcolor.colored(msg, color="red"))
         elif user == "exit":
             print("\n", end="")
-            if os.path.getsize("my-passwords.txt") != 0:
+            if os.path.getsize(PWDS_FILE) != 0:
                 delete_data_start()
                 return False
             else:
@@ -306,7 +311,7 @@ def sym_key():
     Save this key inside new file(the-security-key.key)
     """
     the_sym_key = Fernet.generate_key()
-    sym_new_file = open("the-security-key.key", "wb")
+    sym_new_file = open(SYMMETRIC_KEY_FILE, "wb")
     sym_new_file.write(the_sym_key)
     sym_new_file.close()
 
@@ -318,15 +323,15 @@ def encrypt_data():
     then create a new file (my-encrypted-data.txt) and
     store the encryption data inside it
     """
-    sym_file = open("the-security-key.key", "rb")
+    sym_file = open(SYMMETRIC_KEY_FILE, "rb")
     sym_key = sym_file.read()
     sym_file.close()
-    pwds_file = open("my-passwords.txt", "rb")
+    pwds_file = open(PWDS_FILE, "rb")
     pwds_file_data = pwds_file.read()
     pwds_file.close()
     f_key = Fernet(sym_key)
     encrypted_data = f_key.encrypt(pwds_file_data)
-    encrypted_file = open("my-encrypted-data.txt", "wb")
+    encrypted_file = open(PWDS_ECRYPTED_FILE, "wb")
     encrypted_file.write(encrypted_data)
     encrypted_file.close()
 
@@ -337,10 +342,10 @@ def decrypt_data():
     and decrypt these data with same symmetric key
     Then print the normal data on the terminal
     """
-    sym_file = open("the-security-key.key", "rb")
+    sym_file = open(SYMMETRIC_KEY_FILE, "rb")
     sym_key = sym_file.read()
     sym_file.close()
-    encrypted_file = open("my-encrypted-data.txt", "rb")
+    encrypted_file = open(PWDS_ECRYPTED_FILE, "rb")
     encrypted_data = encrypted_file.read()
     encrypted_file.close()
     f_key = Fernet(sym_key)
@@ -350,10 +355,10 @@ def decrypt_data():
 
 def delete_files_content():
     ''' Function to delete the content of my saved PWDs and usernames '''
-    my_pwd_file = open("my-passwords.txt", "w")
+    my_pwd_file = open(PWDS_FILE, "w")
     my_pwd_file.close()
-    if os.path.isfile("my-encrypted-data.txt"):
-        my_encry_file = open("my-encrypted-data.txt", "w")
+    if os.path.isfile(PWDS_ECRYPTED_FILE):
+        my_encry_file = open(PWDS_ECRYPTED_FILE, "w")
         my_encry_file.close()
 
 
