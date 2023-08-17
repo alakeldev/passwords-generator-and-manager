@@ -23,12 +23,9 @@ def get_user_name():
             and len(fname) > 1
             and len(lname) > 1
         ):
-            print(
-                termcolor.colored(
-                    f"\nHi {fname} {lname}, nice to see you!. \n",
-                    color="green",
-                )
-            )
+            global hi_msg
+            hi_msg = f"\nHi {fname} {lname}, nice to see you!.\n"
+            print(termcolor.colored(hi_msg, color="green"))
             return False
         else:
             try:
@@ -87,7 +84,7 @@ def exit_pwd_generator():
     while True:
         print(
             termcolor.colored(
-                "\nDo you want to exit the passwords generator application?",
+                "\nDo you want to exit the Passwords Generator Application?",
                 color="yellow"
             )
         )
@@ -195,10 +192,11 @@ def pwd_manager_start():
             print(termcolor.colored(app_second_title, color="green"))
             print(
                 termcolor.colored(
-                    "Welcome To Your Passwords Manager Application!\n",
+                    "Welcome To Your Passwords Manager Application!",
                     color="green",
                 )
             )
+            print(termcolor.colored(hi_msg, color="green"))
             pwd_manager_run()
             return False
         elif passwords_manager == "n" or passwords_manager == "no":
