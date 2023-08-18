@@ -145,7 +145,7 @@ def pwd_chars_number():
             except ValueError as e:
                 print(
                     termcolor.colored(
-                        f"Invalid Value: {e}Please try again.\n", color="red"
+                        f"Invalid Value: {e}Please try again.", color="red"
                     )
                 )
 
@@ -285,7 +285,7 @@ def pwd_manager_run():
                 decrypt_data()
             else:
                 msg = "\nYou don't have previous saved Passwords!\n"
-                print(termcolor.colored(msg, color="red"))
+                print(termcolor.colored(msg, color="yellow"))
         elif user == "exit":
             print("\n", end="")
             if os.path.getsize(PWDS_FILE) != 0:
