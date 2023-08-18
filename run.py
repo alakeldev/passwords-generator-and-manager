@@ -29,8 +29,8 @@ def get_user_name():
             and len(lname) > MIN_CHARS_IN_NAME_AND_PWD
         ):
             global hi_msg
-            hi_msg = f"\nHi {fname} {lname}, nice to see you!.\n"
-            print(termcolor.colored(hi_msg, color="green"))
+            hi_msg = f"\nHi {fname} {lname}, nice to see you"
+            print(termcolor.colored(hi_msg + "!.\n", color="green"))
             return False
         else:
             try:
@@ -201,7 +201,7 @@ def pwd_manager_start():
                     color="green",
                 )
             )
-            print(termcolor.colored(hi_msg, color="green"))
+            print(termcolor.colored(hi_msg + " again.\n", color="green"))
             pwd_manager_run()
             return False
         elif passwords_manager == "n" or passwords_manager == "no":
@@ -239,7 +239,7 @@ def pwd_manager_run():
         print(termcolor.colored(exit_msg, color="red"))
         user = input("'save' or 'view': ").lower().strip()
         if user == "save":
-            msg = "\nPlease don't enter empty Fields or Even 1-2 Chars!"
+            msg = "\nPlease don't enter empty Fields or one Character"
             print(termcolor.colored(msg, color="green"))
             user_name = input("Username: ").strip()
             new_password = input("Password: ").strip()
