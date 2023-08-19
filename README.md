@@ -62,7 +62,7 @@ Same features in my version of "Norton" Passwords Generator and Manager:
 
 ## Design
 
-### [Diagrams-App](https://app.diagrams.net/):
+### [Diagrams-App](https://app.diagrams.net/)
+This flowchart was created to visualise the logical flow and various paths possible.                          
+You can view the Application diagram and see each process in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
 ![App-Diagram](assets/readme-images/pp3-diagram.png)
-
-You can check the app diagram and see the process in detail by clicking [HERE](pwds-generator-manager-diagram-pp3.drawio.html)
