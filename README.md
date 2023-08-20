@@ -3,34 +3,34 @@
 
 ![PWD-image](assets/readme-images/pwd.jpg)
 
-The Passwords Generator and Manager is live and deployed on Heroku cloud platform, please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
+The Passwords Generator and Manager application is live and deployed on Heroku cloud platform. Please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
 
 ## Table of Contents
-+ [UX](#ux "UX")
-  + [App Purpose](#App-purpose "App Purpose")
-  + [App Goal](#App-goal "App Goal")
-  + [Audience](#audience "Audience")
-  + [Communication](#communication "Communication")
-  + [Current User Goals](#current-user-goals "Current User Goals")
-  + [New User Goals](#new-user-goals "New User Goals")
-+ [Design](#design "Design")
-+ [Features](#features "Features")
-  + [Existing Features](#existing-features "Existing Features")
-+ [Testing](#testing "Testing")
-  + [Validator Testing](#validator-testing "Validator Testing")
-  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
-+ [Technologies Used](#technologies-used "Technologies Used")
-  + [Main Languages Used](#main-languages-used "Main Languages Used")
-  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
-+ [Deployment](#deployment "Deployment")
-+ [Credits](#credits "Credits")
-  + [Content](#content "Content")
-  + [Media](#media "Media")
+- [Table of Contents](#table-of-contents)
+- [UX](#ux)
+  - [App Purpose:](#app-purpose)
+  - [App Goal:](#app-goal)
+  - [Audience:](#audience)
+  - [Communication:](#communication)
+  - [Current User Goals:](#current-user-goals)
+  - [New User Goals:](#new-user-goals)
+  - [Future Goals:](#future-goals)
+- [Design](#design)
+  - [Diagrams-App:](#diagrams-app)
+- [Features](#features)
+  - [Existing Features:](#existing-features)
+    - [Landing Page:](#landing-page)
+    - [:](#)
+    - [:](#-1)
+    - [:](#-2)
+    - [:](#-3)
+    - [:](#-4)
+  - [](#-5)
 
 ## UX
 
 ### App Purpose:
-“Passwords Generator and Manager” is an application that helps you generate strong and secure passwords for your online accounts. With this application, you can create unique passwords that are difficult to guess or hack. The application also leads you to a password manager application that allows you to store your passwords securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all. This application is designed to make your online life easier and more secure.
+It is an application that helps you generate strong and secure passwords for your online accounts. With this application, you can create unique passwords that are difficult to guess or hack. The application also leads you to a password manager application that allows you to store your passwords securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all. This application is designed to make your online life easier and more secure.
 
 ### App Goal: 
 - Generate strong and unique passwords that are difficult to guess or hack.
@@ -52,17 +52,46 @@ The App expresses its intent through the print statements generated, prompting t
 - Share their passwords and usernames with trusted family members or friends.
 
 ### Future Goals:
-Same features in my version of "Norton" Passwords Generator and Manager:
-- Create an account for each user that shows only their passwords and requires a master password and username to access
+The most of these features are in version of "Norton" Passwords Generator and Manager:
+- Create an account for each user that shows only their passwords and requires a master password and username to access.
 - Provide a password strength meter that shows the strength of each password generated.
 - Provide a feature that allows users to import and export their passwords to other applications.
 - Password expiration reminders, two-factor authentication.
 - Biometric authentication technologies such as facial recognition or fingerprint scanning.
-- Encrypt the data with public key and decrypt these data with different privet key (asymmetric encryption)
+- Encrypt the data with public key and decrypt these data with different privet key (asymmetric encryption).
+- Remove the file of my-passwords.txt file and save the user passwords in encrypted version direct only.
+- Remove and Edits a specific saved username or password inside the file without effect any other saved data
+- Make the encrypt and decrypt through APIs.
 
 ## Design
 
-### [Diagrams-App](https://app.diagrams.net/)
+### [Diagrams-App](https://app.diagrams.net/):
 This flowchart was created to visualise the logical flow and various paths possible.                          
-You can view the Application diagram and see each process in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
+You can view the Application diagram-flowchart and see each process and path in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
 ![App-Diagram](assets/readme-images/pp3-diagram.png)
+
+## Features
+
+### Existing Features:
+
+#### Landing Page:
+![Landing Page](assets/images/readme-landingpage.png)
+
+#### :
+![](assets/images/readme-rate.png)
+
+#### :
+![](assets/images/readme-recipe-selection.png)
+
+#### :
+![](assets/images/readme-ingredients.png)
+![](assets/images/readme-instructions.png)
+
+#### :
+![](assets/images/readme-rate-recipe.png)
+
+#### :
+![](assets/images/readme-quit-restart.png)
+
+### 
+
