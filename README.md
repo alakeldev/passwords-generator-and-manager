@@ -20,18 +20,11 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
 - [Design](#design)
   - [Colour:](#colour)
   - [Existing Features:](#existing-features)
-    - [Landing Page + Passwords Generator App Start:](#landing-page--passwords-generator-app-start)
-    - [Get Full-Name + Welcome Message:](#get-full-name--welcome-message)
-    - [Passwords Generator Run Full-Path:](#passwords-generator-run-full-path)
-    - [Passwords Generator Run "Exit" Path:](#passwords-generator-run-exit-path)
-    - [Passwords Manager App Start + Welcome Message:](#passwords-manager-app-start--welcome-message)
-    - [Passwords Manager App - "Save" Path:](#passwords-manager-app---save-path)
-    - [Passwords Manager App - "View" Path:](#passwords-manager-app---view-path)
-    - [Passwords Manager App - "Exit" =\> Ask: Delete The Previous Saved Data:](#passwords-manager-app---exit--ask-delete-the-previous-saved-data)
-    - [Passwords Manager App - "Exit" =\> No Ask: No Previous Saved Data:](#passwords-manager-app---exit--no-ask-no-previous-saved-data)
-    - [Passwords Generator + Manager Apps =\> "Exit" Paths:](#passwords-generator--manager-apps--exit-paths)
-  - [Hidden(Background) Features](#hiddenbackground-features)
+  - [Hidden Features](#hidden-features)
   - [Future Features](#future-features)
+- [Testing](#testing)
+  - [Validator Testing](#validator-testing)
+  - [Unfixed Bugs](#unfixed-bugs)
 
 ## UX
 
@@ -79,42 +72,79 @@ You can view the Application diagram-flowchart and see each path in detail by cl
 The Python “Termcolor” module was utilized to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was utilized for Apps titles, welcome , bye messages, and normal and important results such as the new generator password. Red was utilized for errors and non-normal messages. Yellow was utilized to indicate unique questions or guide.
 
 ### Existing Features:
-#### Landing Page + Passwords Generator App Start:
+- Landing Page + Passwords Generator App Start:
+
 ![Landing Page and Passwords Generator start](assets/readme-images/loading-app.png)
 
-#### Get Full-Name + Welcome Message:
+- Get Full-Name + Welcome Message:
+
 ![Welcome Message](assets/readme-images/welcome-msg-app.png)
 
-#### Passwords Generator Run Full-Path:
+- Passwords Generator Run Full-Path:
+
 ![Passwords Generator Normal Path](assets/readme-images/pwd-generator-app.png)
 
-#### Passwords Generator Run "Exit" Path:
+- Passwords Generator Run "Exit" Path:
+
 ![Passwords Generator Exit Path](assets/readme-images/pwd-generator-app-exit.png)
 
-#### Passwords Manager App Start + Welcome Message:
+- Passwords Manager App Start + Welcome Message:
+
 ![Passwords Manager start + Msg](assets/readme-images/pwd-manager-start.png)
 
-#### Passwords Manager App - "Save" Path:
+- Passwords Manager App - "Save" Path:
+
 ![Passwords Manager - Save Path](assets/readme-images/pwd-manager-save-path.png)
 
-#### Passwords Manager App - "View" Path:
+- Passwords Manager App - "View" Path => There are saved previous ones:
+
 ![Passwords Manager - View Path](assets/readme-images/pwd-manager-view-path.png)
 
-#### Passwords Manager App - "Exit" => Ask: Delete The Previous Saved Data:
+- Passwords Manager App - "View" Path => No previous Saved Passwords:
+
+![Passwords Manager - View Path](assets/readme-images/pwd-manager-view-no-previous-pwds.png)
+
+- Passwords Manager App - "Exit" Path => Yes Ask: There are saved previous ones:
+
 ![Passwords Manager - Exit & Delete](assets/readme-images/pwd-manager-exit-delete-saved-data-path.png)
 
-#### Passwords Manager App - "Exit" => No Ask: No Previous Saved Data:
+- Passwords Manager App - "Exit" Path => No Ask: No Previous Saved Passwords:
+
 ![Passwords Manager - Exit](assets/readme-images/pwd-manager-exit-no-saved-data.png)
 
-#### Passwords Generator + Manager Apps => "Exit" Paths:
+- Passwords Generator + Manager Apps => The Shortest "Exit" Path:
+
 ![Passwords Generator and Manager Apps 'Exit'](assets/readme-images/exit-all-path.png)
 
-### Hidden(Background) Features
+### Hidden Features
 
+- Passwords Manager App Start:<br>
+When the user answer ‘yes’ to the question: ‘Do you want to start the Passwords Manager Application for the first time?’, a new file named ‘the-security-key.key’ will be created, and a symmetric key will be generated and stored inside that file.
+
+- Passwords Manager App - "Save" Path:<br>
+After the user chooses a save path and enters a username and password (not leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
+
+- Passwords Manager App - "view" Path:<br>
+When the user chooses to view the path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
+
+- Passwords Manager App - "Exit" Path:<br>
+When the user chooses to exit the Passwords Manager Application and there is previously saved data, a function will run and asking if they want to remove the previous saved data. If the user enters ‘yes’, a new function will run that will delete all of the data inside the files ‘my-passwords.txt’ and ‘my-encrypted-data.txt’.
 
 ### Future Features
 - Create an account for each user that shows only their passwords and requires a master password and username to access.
 - Remove and Edits a specific saved username or password inside the file without effect any other saved data.
 - Password expiration reminders, two-factor authentication.
 - Create simple beatiful GUI for application.
+
+## Testing
+
+
+
+### Validator Testing
+- The code has been tested by using [PEP8-CI Heroku-App](https://pep8ci.herokuapp.com/).
+- As per the photo below showed an error at line (127) said: invalid escape sequence ‘\d’. After a lot of searches and asking tutor support, I cannot avoid this error as it’s a "regular expression".
+
+![PEP8-CI Validation](assets/readme-images/pep8-ci.png)
+
+### Unfixed Bugs
 

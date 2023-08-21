@@ -239,7 +239,7 @@ def pwd_manager_run():
         print(termcolor.colored(exit_msg, color="red"))
         user = input("'save' or 'view': ").lower().strip()
         if user == "save":
-            msg = "\nPlease don't enter empty Fields or one Character"
+            msg = "\nPlease don't enter empty Fields or only one Character!"
             print(termcolor.colored(msg, color="yellow"))
             user_name = input("Username: ").strip()
             new_password = input("Password: ").strip()
