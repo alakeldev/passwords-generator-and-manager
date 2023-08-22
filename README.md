@@ -25,6 +25,13 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
 - [Testing](#testing)
   - [Validator Testing](#validator-testing)
   - [Unfixed Bugs](#unfixed-bugs)
+- [Technologies Used](#technologies-used)
+  - [Main Languages Used](#main-languages-used)
+  - [Python Packages](#python-packages)
+  - [Tools](#tools)
+- [Deployment](#deployment)
+  - [How to deploy](#how-to-deploy)
+  - [How to clone](#how-to-clone)
 
 ## UX
 
@@ -141,10 +148,58 @@ When the user chooses to exit the Passwords Manager Application and there is pre
 
 
 ### Validator Testing
-- The code has been tested by using [PEP8-CI Heroku-App](https://pep8ci.herokuapp.com/).
-- As per the photo below showed an error at line (127) said: invalid escape sequence ‘\d’. After a lot of searches and asking tutor support, I cannot avoid this error as it’s a "regular expression".
+- The code has been tested by using [PEP8-CI Heroku-App](https://pep8ci.herokuapp.com/):<br>
+As per the photo below showed an error at line (127) said: invalid escape sequence ‘\d’. After a lot of searches and asking CI tutor support. I cannot avoid this error as it’s a "Regular Expression".
 
 ![PEP8-CI Validation](assets/readme-images/pep8-ci.png)
 
 ### Unfixed Bugs
 
+## Technologies Used
+### Main Languages Used 
+- [Python](https://www.python.org/)
+
+### Python Packages
+- [termcolor](https://pypi.org/project/termcolor/).
+- [pyfiglet](https://pypi.org/project/pyfiglet/).
+- [random](https://docs.python.org/3/library/random.html).
+- [re](https://docs.python.org/3/library/re.html).
+- [codecs](https://docs.python.org/3/library/codecs.html).
+- [os](https://docs.python.org/3/library/os.html).
+- [Fernet](https://cryptography.io/en/latest/fernet/).
+
+### Tools
+- [Heroku](https://id.heroku.com) was used to deploy the live project.
+- [PEP8-CI](https://pep8ci.herokuapp.com/) online was used to validate Python code.
+- [Diagrams.net](https://app.diagrams.net/) was used to create the Flowchart.
+- [GitHub](https://github.com/) GitHub is used to store the projects code after being pushed from Git.
+- VS-code - IDE to write Python code and create new files and folders for the project.
+
+## Deployment
+* I used VS-code IDE to write the Python code and it was easy to use its terminal to commit my files and push to my repository on Github.
+* It's very important after you installed all neccesary python modules/libraries and use-import it through your project. Open the VS-code terminal and write: "pip freeze > requirements.txt" then commit and push this change to your Github repo before starting the deployment process on Heroku.  
+* The Application deployed on Heroku Cloud Platform seccscfuly.
+
+### How to deploy 
+- The deployment on Heroku was done through the following steps:
+  - Create a new app in Heroku.
+  - Select "New" and "Create new app".
+  - Name the new app & Choose a region then click "Create app".
+  - Click on the "Settings" tab at the top of the page.
+  - Open the "Reveal Config Vars" section and input the following information:
+    - KEY: PORT, VALUE: 8000.
+  - Go to buildpacks section and press on add buildpack.
+  - Select Python and Nodejs, Make sure they are in this order.
+  - Click on the "Deploy" tab at the top of the page.
+  - In "Deployment Method" click on "GitHub" to connect them.
+  - Select "connect" to the target Repo on Github.
+  - Enable Automatic Deploys" or "Deploy Branch".
+  - Heroku will start the process to deploy your App.
+
+### How to clone
+- Go to the following repository on GitHub: https://github.com/alakeldev/passwords-generator-and-manager-pp3 .
+- At the top right of the screen, click the 'Code' button, and then click 'HTTPs'.
+- Copy the link in this field.
+- Open VS-code, creat new project folder, open the terminal.
+- On the terminal type "git clone", then paste the copied url and press 'Enter'.
+- The clone process should now begin.
