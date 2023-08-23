@@ -18,8 +18,8 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
 - [Logic](#logic)
   - [Diagrams-App:](#diagrams-app)
 - [Design](#design)
-  - [Colour:](#colour)
-  - [Existing Features:](#existing-features)
+  - [Colour](#colour)
+  - [Existing Features](#existing-features)
   - [Hidden Features](#hidden-features)
   - [Future Features](#future-features)
 - [Testing](#testing)
@@ -79,10 +79,10 @@ You can view the Application diagram-flowchart and see each path in detail by cl
 
 ## Design
 
-### Colour:
-The Python “Termcolor” module was utilized to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was utilized for Apps titles, welcome , bye messages, and normal and important results such as the new generator password. Red was utilized for errors and non-normal messages. Yellow was utilized to indicate unique questions or guide.
+### Colour
+The Python “Termcolor” module was utilized to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was utilized for Apps titles, welcome , bye messages, also normal and important results such as the new generator password. Red was utilized for errors and non-normal messages. Yellow was utilized to indicate unique questions or guide messages.
 
-### Existing Features:
+### Existing Features
 - Landing Page + Passwords Generator App Start:
 
 ![Landing Page and Passwords Generator start](assets/readme-images/loading-app.png)
@@ -128,7 +128,6 @@ The Python “Termcolor” module was utilized to add color to the project. The 
 ![Passwords Generator and Manager Apps 'Exit'](assets/readme-images/exit-all-path.png)
 
 ### Hidden Features
-
 - Passwords Manager App Start:<br>
 When the user answer ‘yes’ to the question: ‘Do you want to start the Passwords Manager Application for the first time?’, a new file named ‘the-security-key.key’ will be created, and a symmetric key will be generated and stored inside that file.
 
@@ -149,12 +148,12 @@ When the user chooses to exit the Passwords Manager Application and there is pre
 
 ## Testing
 - Extensive testing was completed to review each possible path / scenario a user might take. This was to ensure looping back to the specific and related point, no dead ends were encountered and showing error messages that can be readable for the user.
-- Check the project flowchart to get each path detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/)
+- Check the project flowchart to get each path detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).
 
 
 ### Validator Testing
 - The code has been tested by using [PEP8-CI Heroku-App](https://pep8ci.herokuapp.com/):<br>
-As shown in the photo below, there is an error on line 127 that says “invalid escape sequence ‘\d’”. After conducting extensive searches and consulting with CI tutor support, I was unable to avoid this error as it is related to a “Regular Expression”
+As shown in the photo below, there is an error on line 127 that says “invalid escape sequence ‘\d’”. After conducting extensive searches and consulting with CI tutor support, I was unable to avoid this error as it is related to a “Regular Expression”.
 
 ![PEP8-CI Validation](assets/readme-images/pep8-ci.png)
 
@@ -170,7 +169,9 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 ![Bug-Fernet2-cryptography](assets/readme-images/bug-fernet2.png)
 
 - Although I encountered some error messages, I was able to resolve them by adding if conditions in certain situations. This approach provided the best logic, as well as an easy and fast solution.
+
 ### Unfixed Bugs
+- None currently found.
 
 ## Technologies Used
 ### Main Languages Used 
@@ -182,8 +183,8 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - [random](https://docs.python.org/3/library/random.html): the primary objective is to generate a new password each time the user requests one by selecting random characters from the constant ‘PWD_CHARACTERS’.
 - [re](https://docs.python.org/3/library/re.html): the primary use of regular expressions and matching operations is to extract the first and last name of the user. Additionally, these operations are used to control the input with only numbers and a condition that controls the number of characters between 4 and 40.
 - [codecs](https://docs.python.org/3/library/codecs.html): provides a way to encode and decode data.
-- [os](https://docs.python.org/3/library/os.html): The primary use of file manipulation is to create, read, and write files. Additionally, it is used to manipulate paths such as those used in if conditions to check the file, and to check the file size.
-- [Fernet](https://cryptography.io/en/latest/fernet/): The cryptography package includes a feature "Fernet" that allows for the encryption and decryption of data within a file using a symmetric key.
+- [os](https://docs.python.org/3/library/os.html): the primary use of file manipulation is to create, read, and write files. Additionally, it is used to manipulate paths such as those used in if conditions to check the file, and to check the file size.
+- [Fernet](https://cryptography.io/en/latest/fernet/): the cryptography package includes a feature "Fernet" that allows for the encryption and decryption of data within a file using a symmetric key.
 
 ### Tools
 - [Heroku](https://id.heroku.com) was used to deploy the live project.
@@ -200,7 +201,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 
 ### How to deploy 
 - The deployment on Heroku was done through the following steps:
-  - log in to Heroku
+  - log in to Heroku.
   - Create a new app in Heroku.
   - Select "New" and "Create new app".
   - Name the new app & Choose a region then click "Create app".
@@ -216,7 +217,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
   - Heroku will start the process to deploy your App.
 
 ### How to clone
-- Go to the following repository on GitHub: https://github.com/alakeldev/passwords-generator-and-manager-pp3 .
+- Go to the following repository on GitHub: https://github.com/alakeldev/passwords-generator-and-manager-pp3
 - At the top right of the screen, click the 'Code' button, and then click 'HTTPs'.
 - Copy the link in this field.
 - Open VS-code, creat new project folder, open the terminal.
@@ -232,8 +233,14 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - [Docs-Python](https://docs.python.org/3/tutorial/index.html) - Was a very help source of information.
 - [Udemy-Course](https://www.udemy.com/certificate/UC-aefd5c77-88d7-4a4e-a6f6-d9390bad39ab/) - In April 2022, I attended the Python Mega Course, which helped me to smoothly understand basic Python concepts. Additionally, I was able to learn some advanced material such as Pandas and Flask.
 - [My-Summary-In-Python](https://github.com/alakeldev/the-summary-of-python/blob/main/first.py) - I created a summary of my Python learning through my learning journey.
-- [Norton-Password-Manager](https://de.norton.com/feature/password-manager) - I found the product to be very helpful in generating the main idea of my project. Additionally, I am very satisfied with its features and services, such as the ability to generate new, powerful passwords and store them in an encrypted format
+- [Norton-Password-Manager](https://de.norton.com/feature/password-manager) - I found the product to be very helpful in generating the main idea of my project. Additionally, I am very satisfied with its features and services, such as the ability to generate new, powerful passwords and store them in an encrypted format.
 - [CI-Slack-Channels](https://code-institute-room.slack.com/) - I relied on the Code-Institute Slack community channels to increase my knowledge and to check for previous problems with the Heroku cloud platform and some errors that other students have faced.
+- [Cryptography-Fernet(Symmetric-encryption)](https://cryptography.io/en/latest/fernet/) - Fernet guarantees that a message/text/data encrypted using it cannot be manipulated or read without the symmetric key (also known as “secret key”).
+  - The symmetric key: is generated using a URL-safe base64-encoded 32-byte key. Anyone with this key is able to create and read messages.
+  - The encrypted data: is a secure message that cannot be read or altered without the key. It is URL-safe base64-encoded. This is referred to as a “Fernet token”.
+  - The decrypted data: decrypts a “Fernet token” with the same symmetric key. If successfully decrypted, you will receive the original plaintext as the result, and it’s a readable version for the user.
+- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - For advanced awesome information related to Fernet is a vast and fascinating topic that requires a deep dive to fully comprehend.
+
 
 ## Acknowledgements
 - I would like to express my gratitude to my mentor 'Martina Terlevic' for her invaluable feedback, advice, tips, and reviewing my code.
