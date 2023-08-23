@@ -1,5 +1,5 @@
 <h1 align="center">🔐Passwords Generator & Manager🔐</h1>
-“Passwords Generator and Manager” starts with an application that helps you generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application (Section) that helps you manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
+“Passwords Generator and Manager” starts with an application that helps you generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application that helps you manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
 
 ![PWD-image](assets/readme-images/pwd.jpg)
 
@@ -9,7 +9,7 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
 - [Table of Contents](#table-of-contents)
 - [UX](#ux)
   - [App Purpose:](#app-purpose)
-  - [App Goal:](#app-goal)
+  - [App Goals:](#app-goals)
   - [Audience:](#audience)
   - [Communication:](#communication)
   - [Current User Goals:](#current-user-goals)
@@ -24,6 +24,7 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
   - [Future Features](#future-features)
 - [Testing](#testing)
   - [Validator Testing](#validator-testing)
+  - [Fixed Bugs](#fixed-bugs)
   - [Unfixed Bugs](#unfixed-bugs)
 - [Technologies Used](#technologies-used)
   - [Main Languages Used](#main-languages-used)
@@ -32,13 +33,15 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
 - [Deployment](#deployment)
   - [How to deploy](#how-to-deploy)
   - [How to clone](#how-to-clone)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 
 ## UX
 
 ### App Purpose:
 It is an application that helps you generate strong and secure passwords for your online accounts. With this application, you can create unique passwords that are difficult to guess or hack. The application also leads you to a password manager application that allows you to store your passwords securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all. This application is designed to make your online life easier and more secure.
 
-### App Goal: 
+### App Goals: 
 - Generate strong and unique passwords that are difficult to guess or hack.
 - Store your passwords & its username securely in an encrypted file, so you don’t have to remember them all.
 
@@ -54,11 +57,12 @@ The App expresses its intent through the print statements generated, prompting t
 - Easily to back to their saved passwords whenever they need them.
 
 ### New User Goals:
-- Generate fast small passwords that are easy to remember but still secure.
+- Generate fast small-medium passwords that are easy to remember but still secure.
+- Generate fast long passwords that are really secure and hard to guess.
 - Share their passwords and usernames with trusted family members or friends.
 
 ### Future Goals:
-The most of these features are in the version of "Norton" Passwords Generator and Manager:
+The most of the following features are in the version of "Norton" Passwords Generator and Manager:
 - Provide a password strength meter that shows the strength of each password generated.
 - Provide a feature that allows users to import and export their passwords to other applications.
 - Biometric authentication technologies such as facial recognition or fingerprint scanning.
@@ -69,7 +73,7 @@ The most of these features are in the version of "Norton" Passwords Generator an
 ## Logic
 
 ### [Diagrams-App](https://app.diagrams.net/):
-This flowchart was created to visualise the logical flow and various paths possible.                          
+The following flowchart was created to visualise the logical flow and various paths possible.                          
 You can view the Application diagram-flowchart and see each path in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
 ![App-Diagram](assets/readme-images/pp3-diagram.png)
 
@@ -129,13 +133,13 @@ The Python “Termcolor” module was utilized to add color to the project. The 
 When the user answer ‘yes’ to the question: ‘Do you want to start the Passwords Manager Application for the first time?’, a new file named ‘the-security-key.key’ will be created, and a symmetric key will be generated and stored inside that file.
 
 - Passwords Manager App - "Save" Path:<br>
-After the user chooses a save path and enters a username and password (not leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
+After the user chooses a save path and enters a username and password (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
 
 - Passwords Manager App - "view" Path:<br>
 When the user chooses to view the path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
 
 - Passwords Manager App - "Exit" Path:<br>
-When the user chooses to exit the Passwords Manager Application and there is previously saved data, a function will run and asking if they want to remove the previous saved data. If the user enters ‘yes’, a new function will run that will delete all of the data inside the files ‘my-passwords.txt’ and ‘my-encrypted-data.txt’.
+When the user chooses to exit the Passwords Manager Application and there is previously saved data, a function will run and ask if they want to remove the previously saved data. If the user enters ‘yes’, a new function will run that will delete all of the data inside the files ‘my-passwords.txt’ and ‘my-encrypted-data.txt’.
 
 ### Future Features
 - Create an account for each user that shows only their passwords and requires a master password and username to access.
@@ -144,15 +148,28 @@ When the user chooses to exit the Passwords Manager Application and there is pre
 - Create simple beatiful GUI for application.
 
 ## Testing
-
+- Extensive testing was completed to review each possible path / scenario a user might take. This was to ensure looping back to the specific and related point, no dead ends were encountered and showing error messages that can be readable for the user.
+- Check the project flowchart to get each path detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/)
 
 
 ### Validator Testing
 - The code has been tested by using [PEP8-CI Heroku-App](https://pep8ci.herokuapp.com/):<br>
-As per the photo below showed an error at line (127) said: invalid escape sequence ‘\d’. After a lot of searches and asking CI tutor support. I cannot avoid this error as it’s a "Regular Expression".
+As shown in the photo below, there is an error on line 127 that says “invalid escape sequence ‘\d’”. After conducting extensive searches and consulting with CI tutor support, I was unable to avoid this error as it is related to a “Regular Expression”
 
 ![PEP8-CI Validation](assets/readme-images/pep8-ci.png)
 
+### Fixed Bugs
+- The photo below shows a bug that I encountered on the Heroku terminal. After conducting extensive research and reading about it, I found that the best solution was to import the Python module ‘codecs’.
+
+![Bug-codecs](assets/readme-images/bug-utf-8.png)
+
+- The two following photos are showing a bug at different times and that you have done more searches and read about Fernet and cryptography to find the issue with my code and learn more about encrypt and decrypt methods with symmetric key.
+
+![Bug-Fernet1-cryptography](assets/readme-images/bug-fernet1.png)
+
+![Bug-Fernet2-cryptography](assets/readme-images/bug-fernet2.png)
+
+- Although I encountered some error messages, I was able to resolve them by adding if conditions in certain situations. This approach provided the best logic, as well as an easy and fast solution.
 ### Unfixed Bugs
 
 ## Technologies Used
@@ -162,23 +179,23 @@ As per the photo below showed an error at line (127) said: invalid escape sequen
 ### Python Packages-Modules
 - [termcolor](https://pypi.org/project/termcolor/): print colored text in the terminal.
 - [pyfiglet](https://pypi.org/project/pyfiglet/): create the app titles with ASCII art.
-- [random](https://docs.python.org/3/library/random.html) main purpose is to take random characters from the constant "PWD_CHARACTERS" each time user request to generate a new password.
-- [re](https://docs.python.org/3/library/re.html): for regular expression and matching operations and the main use when the user enter first-name and last-name.
+- [random](https://docs.python.org/3/library/random.html): the primary objective is to generate a new password each time the user requests one by selecting random characters from the constant ‘PWD_CHARACTERS’.
+- [re](https://docs.python.org/3/library/re.html): the primary use of regular expressions and matching operations is to extract the first and last name of the user. Additionally, these operations are used to control the input with only numbers and a condition that controls the number of characters between 4 and 40.
 - [codecs](https://docs.python.org/3/library/codecs.html): provides a way to encode and decode data.
-- [os](https://docs.python.org/3/library/os.html) create, read and write on files, manipulate paths such as used in if conditions to check the file, check on file size and many.
-- [Fernet](https://cryptography.io/en/latest/fernet/): it's a part of cryptography package and used to encrypt and decrypt the data inside the file with symmertic key.
+- [os](https://docs.python.org/3/library/os.html): The primary use of file manipulation is to create, read, and write files. Additionally, it is used to manipulate paths such as those used in if conditions to check the file, and to check the file size.
+- [Fernet](https://cryptography.io/en/latest/fernet/): The cryptography package includes a feature that allows for the encryption and decryption of data within a file using a symmetric key.
 
 ### Tools
 - [Heroku](https://id.heroku.com) was used to deploy the live project.
 - [PEP8-CI](https://pep8ci.herokuapp.com/) online was used to validate Python code.
 - [Diagrams.net](https://app.diagrams.net/) was used to create the Flowchart.
 - [GitHub](https://github.com/) GitHub is used to store the projects code after being pushed from Git.
-- VS-code - IDE to write Python code, create new files and folders for the project.
+- [VS-code](https://code.visualstudio.com/) - IDE to write Python code, create new files and folders for the project.
 
 ## Deployment
-- The Application deployed on Heroku Cloud Platform seccscfuly.
-- I used VS-code IDE to write the Python code and it was easy to use its terminal to commit my files and push to my repository on Github.
-- It's very important after you installed all neccesary python modules/packages and import it into your project. Open the VS-code terminal and write: "pip freeze > requirements.txt" then commit and push this change to your Github repo before starting the deployment process on Heroku.  
+- The application was deployed on the Heroku Cloud Platform successfully.
+- I used VS-code IDE to write the Python code, and it was easy to use its terminal to commit my files and push them to my repository on Github.
+- It’s very important to install all necessary python modules/packages and import them into your project. Open the VS-code terminal and write: “pip freeze > requirements.txt” then commit and push this change to your Github repo before starting the deployment process on Heroku.
 
 
 ### How to deploy 
@@ -205,3 +222,18 @@ As per the photo below showed an error at line (127) said: invalid escape sequen
 - Open VS-code, creat new project folder, open the terminal.
 - On the terminal type "git clone", then paste the copied url and press 'Enter'.
 - The clone process should now begin.
+
+## Credits
+
+- [Code Institute](https://codeinstitute.net/de/) - Full Stack Developer Course.
+- ['Love Sandwiches'](https://github.com/alakeldev/love-sandwiches) - The Code-Institute Walkthrough project.
+- [W3Schools](https://www.w3schools.com/python/default.asp) - Was a very help source of information.
+- [Tutorials-Point](https://www.tutorialspoint.com/python/index.htm) - Was a very help source of information.
+- [Docs-Python](https://docs.python.org/3/tutorial/index.html) - Was a very help source of information.
+- [Udemy-Course](https://www.udemy.com/certificate/UC-aefd5c77-88d7-4a4e-a6f6-d9390bad39ab/) - In April 2022, I attended the Python Mega Course, which helped me to smoothly understand basic Python concepts. Additionally, I was able to learn some advanced material such as Pandas and Flask.
+- [My-Summary-In-Python](https://github.com/alakeldev/the-summary-of-python/blob/main/first.py) - I created a summary of my Python learning through my learning journey.
+- [Norton-Password-Manager](https://de.norton.com/feature/password-manager) - I found the product to be very helpful in generating the main idea of my project. Additionally, I am very satisfied with its features and services, such as the ability to generate new, powerful passwords and store them in an encrypted format
+- [CI-Slack-Channels](https://code-institute-room.slack.com/) - I relied on the Code-Institute Slack community channels to increase my knowledge and to check for previous problems with the Heroku cloud platform and some errors that other students have faced.
+
+## Acknowledgements
+- I would like to express my gratitude to my mentor 'Martina Terlevic' for her invaluable feedback, advice, tips, and reviewing my code.
