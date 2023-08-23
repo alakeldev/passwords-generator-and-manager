@@ -183,7 +183,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - [re](https://docs.python.org/3/library/re.html): the primary use of regular expressions and matching operations is to extract the first and last name of the user. Additionally, these operations are used to control the input with only numbers and a condition that controls the number of characters between 4 and 40.
 - [codecs](https://docs.python.org/3/library/codecs.html): provides a way to encode and decode data.
 - [os](https://docs.python.org/3/library/os.html): The primary use of file manipulation is to create, read, and write files. Additionally, it is used to manipulate paths such as those used in if conditions to check the file, and to check the file size.
-- [Fernet](https://cryptography.io/en/latest/fernet/): The cryptography package includes a feature that allows for the encryption and decryption of data within a file using a symmetric key.
+- [Fernet](https://cryptography.io/en/latest/fernet/): The cryptography package includes a feature "Fernet" that allows for the encryption and decryption of data within a file using a symmetric key.
 
 ### Tools
 - [Heroku](https://id.heroku.com) was used to deploy the live project.
