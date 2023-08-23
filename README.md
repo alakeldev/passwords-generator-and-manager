@@ -27,7 +27,7 @@ The Passwords Generator and Manager application is live and deployed on Heroku c
   - [Unfixed Bugs](#unfixed-bugs)
 - [Technologies Used](#technologies-used)
   - [Main Languages Used](#main-languages-used)
-  - [Python Packages](#python-packages)
+  - [Python Packages-Modules](#python-packages-modules)
   - [Tools](#tools)
 - [Deployment](#deployment)
   - [How to deploy](#how-to-deploy)
@@ -103,7 +103,7 @@ The Python “Termcolor” module was utilized to add color to the project. The 
 
 ![Passwords Manager - Save Path](assets/readme-images/pwd-manager-save-path.png)
 
-- Passwords Manager App - "View" Path => There are saved previous ones:
+- Passwords Manager App - "View" Path => There are saved previous Passwords:
 
 ![Passwords Manager - View Path](assets/readme-images/pwd-manager-view-path.png)
 
@@ -111,7 +111,7 @@ The Python “Termcolor” module was utilized to add color to the project. The 
 
 ![Passwords Manager - View Path](assets/readme-images/pwd-manager-view-no-previous-pwds.png)
 
-- Passwords Manager App - "Exit" Path => Yes Ask: There are saved previous ones:
+- Passwords Manager App - "Exit" Path => Yes Ask: There are saved previous Passwords:
 
 ![Passwords Manager - Exit & Delete](assets/readme-images/pwd-manager-exit-delete-saved-data-path.png)
 
@@ -159,29 +159,31 @@ As per the photo below showed an error at line (127) said: invalid escape sequen
 ### Main Languages Used 
 - [Python](https://www.python.org/)
 
-### Python Packages
-- [termcolor](https://pypi.org/project/termcolor/).
-- [pyfiglet](https://pypi.org/project/pyfiglet/).
-- [random](https://docs.python.org/3/library/random.html).
-- [re](https://docs.python.org/3/library/re.html).
-- [codecs](https://docs.python.org/3/library/codecs.html).
-- [os](https://docs.python.org/3/library/os.html).
-- [Fernet](https://cryptography.io/en/latest/fernet/).
+### Python Packages-Modules
+- [termcolor](https://pypi.org/project/termcolor/): print colored text in the terminal.
+- [pyfiglet](https://pypi.org/project/pyfiglet/): create the app titles with ASCII art.
+- [random](https://docs.python.org/3/library/random.html) main purpose is to take random characters from the constant "PWD_CHARACTERS" each time user request to generate a new password.
+- [re](https://docs.python.org/3/library/re.html): for regular expression and matching operations and the main use when the user enter first-name and last-name.
+- [codecs](https://docs.python.org/3/library/codecs.html): provides a way to encode and decode data.
+- [os](https://docs.python.org/3/library/os.html) create, read and write on files, manipulate paths such as used in if conditions to check the file, check on file size and many.
+- [Fernet](https://cryptography.io/en/latest/fernet/): it's a part of cryptography package and used to encrypt and decrypt the data inside the file with symmertic key.
 
 ### Tools
 - [Heroku](https://id.heroku.com) was used to deploy the live project.
 - [PEP8-CI](https://pep8ci.herokuapp.com/) online was used to validate Python code.
 - [Diagrams.net](https://app.diagrams.net/) was used to create the Flowchart.
 - [GitHub](https://github.com/) GitHub is used to store the projects code after being pushed from Git.
-- VS-code - IDE to write Python code and create new files and folders for the project.
+- VS-code - IDE to write Python code, create new files and folders for the project.
 
 ## Deployment
-* I used VS-code IDE to write the Python code and it was easy to use its terminal to commit my files and push to my repository on Github.
-* It's very important after you installed all neccesary python modules/libraries and use-import it through your project. Open the VS-code terminal and write: "pip freeze > requirements.txt" then commit and push this change to your Github repo before starting the deployment process on Heroku.  
-* The Application deployed on Heroku Cloud Platform seccscfuly.
+- The Application deployed on Heroku Cloud Platform seccscfuly.
+- I used VS-code IDE to write the Python code and it was easy to use its terminal to commit my files and push to my repository on Github.
+- It's very important after you installed all neccesary python modules/packages and import it into your project. Open the VS-code terminal and write: "pip freeze > requirements.txt" then commit and push this change to your Github repo before starting the deployment process on Heroku.  
+
 
 ### How to deploy 
 - The deployment on Heroku was done through the following steps:
+  - log in to Heroku
   - Create a new app in Heroku.
   - Select "New" and "Create new app".
   - Name the new app & Choose a region then click "Create app".
