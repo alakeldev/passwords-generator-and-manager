@@ -241,8 +241,8 @@ def pwd_manager_run():
         if user == "save":
             msg = "\nPlease don't enter empty Fields or only one Character!"
             print(termcolor.colored(msg, color="yellow"))
-            user_name = input("Username: ").strip()
-            new_password = input("Password: ").strip()
+            user_name = input("Username: ").strip().replace(" ", "")
+            new_password = input("Password: ").strip().replace(" ", "")
             if (
                 user_name != ""
                 and new_password != ""
@@ -265,7 +265,7 @@ def pwd_manager_run():
             else:
                 print(
                     termcolor.colored(
-                        "\nEmpty fields or one Char are NOT accepted.",
+                        "\nEmpty fields or one Character are NOT accepted.",
                         color="red",
                         )
                 )
