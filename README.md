@@ -134,7 +134,7 @@ When the user answer ‘yes’ to the question: ‘Do you want to start the Pass
 - Passwords Manager App - "Save" Path:<br>
 After the user chooses a save path and enters a username and password (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
 
-- Passwords Manager App - "view" Path:<br>
+- Passwords Manager App - "View" Path:<br>
 When the user chooses to view the path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
 
 - Passwords Manager App - "Exit" Path:<br>
@@ -162,7 +162,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 
 ![Bug-codecs](assets/readme-images/bug-utf-8.png)
 
-- The two following photos are showing a bug at different times and that you have done more searches and read about Fernet and cryptography to find the issue with my code and learn more about encrypt and decrypt methods with symmetric key.
+- The two following photos are showing a bug at two different times. Because of that I have done more searches on google and read more about Fernet and cryptography to find the issue with my code and learn more about encrypt and decrypt methods with symmetric key.
 
 ![Bug-Fernet1-cryptography](assets/readme-images/bug-fernet1.png)
 
@@ -239,7 +239,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
   - The symmetric key: is generated using a URL-safe base64-encoded 32-byte key. Anyone with this key is able to create and read messages.
   - The encrypted data: is a secure message that cannot be read or altered without the key. It is URL-safe base64-encoded. This is referred to as a “Fernet token”.
   - The decrypted data: decrypts a “Fernet token” with the same symmetric key. If successfully decrypted, you will receive the original plaintext as the result, and it’s a readable version for the user.
-- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - For advanced awesome information related to Fernet is a vast and fascinating topic that requires a deep dive to fully comprehend.
+- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - To take a look in more advanced and awesome information/details related to Fernet and go a little deep dive in it.
 
 
 ## Acknowledgements
