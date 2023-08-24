@@ -3,7 +3,8 @@
 
 ![PWD-image](assets/readme-images/pwd.jpg)
 
-The Passwords Generator and Manager application is live and deployed on the Heroku cloud platform. Please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
+The Passwords Generator and Manager application is live and deployed on the Heroku cloud platform:<br>
+- Please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -80,7 +81,8 @@ You can view the Application diagram-flowchart and see each path in detail by cl
 ## Design
 
 ### Colour
-The Python “Termcolor” module was used to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was used for applications (Generator & Manager) titles, welcome, bye messages, also normal and important results such as the new generated password. Red was used for errors and abnormal messages. Yellow was used to indicate special questions or guide messages.
+- The Python “termcolor” module was used to add color to the project. The colors white, green, yellow and red were employed to represent different paths and results. White was used for the normal questions, messages and answer guides (such as “yes”/“no” or “save”/“view”). Green was used for the application (Generator & Manager) titles, welcome and bye messages, and important results such as the newly generated password. Red was used for errors, abnormal messages and the ‘Exit’ path guide. Yellow was used to indicate special questions or guide messages.
+- The app titles were created with ASCII art using the Python “pyfiglet” module. The green color and ASCII art enhanced the design of the titles.
 
 ### Existing Features
 - Landing Page + Passwords Generator App Start:
