@@ -1,9 +1,9 @@
 <h1 align="center">🔐Passwords Generator & Manager🔐</h1>
-“Passwords Generator and Manager” starts with an application that helps you generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application that helps you manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
+“Passwords Generator and Manager” it starts with an application that helps you generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application that helps you manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
 
 ![PWD-image](assets/readme-images/pwd.jpg)
 
-The Passwords Generator and Manager application is live and deployed on Heroku cloud platform. Please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
+The Passwords Generator and Manager application is live and deployed on the Heroku cloud platform. Please click [HERE](https://password-generator-and-manager-a88bcb86c5e0.herokuapp.com/) to check it out.
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -43,7 +43,7 @@ It is an application that helps you generate strong and secure passwords for you
 
 ### App Goals: 
 - Generate strong and unique passwords that are difficult to guess or hack.
-- Store your passwords & its username securely in an encrypted file, so you don’t have to remember them all.
+- Store the user passwords & usernames securely in an encrypted file, so you don’t have to remember them all.
 
 ### Audience:
 Everyone who wants unique passwords that are difficult to guess or hack for their accounts and also who have multiple online accounts and have trouble remembering all their passwords and want to store them in secure place.
@@ -54,7 +54,7 @@ The App expresses its intent through the print statements generated, prompting t
 ### Current User Goals:
 - Generate strong and unique passwords for their online accounts.
 - Store their passwords and usernames securely in an encrypted file.
-- Easily to back to their saved passwords whenever they need them.
+- Easily go back to their saved passwords whenever they need them.
 
 ### New User Goals:
 - Generate fast small-medium passwords that are easy to remember but still secure.
@@ -62,13 +62,13 @@ The App expresses its intent through the print statements generated, prompting t
 - Share their passwords and usernames with trusted family members or friends.
 
 ### Future Goals:
-The most of the following features are in the version of "Norton" Passwords Generator and Manager:
+Most of the following features are in the version of "Norton" Passwords Generator and Manager:
 - Provide a password strength meter that shows the strength of each password generated.
 - Provide a feature that allows users to import and export their passwords to other applications.
 - Biometric authentication technologies such as facial recognition or fingerprint scanning.
 - Encrypt the data with public key and decrypt these data with different privet key (asymmetric encryption).
-- Remove the file of my-passwords.txt file and save the user passwords in encrypted version direct only.
-- Make the encrypt and decrypt through APIs.
+- Remove the file of my-passwords.txt file and save the user passwords in encrypted version directly.
+- Make the encryption and decryption through APIs.
 
 ## Logic
 
@@ -80,7 +80,7 @@ You can view the Application diagram-flowchart and see each path in detail by cl
 ## Design
 
 ### Colour
-The Python “Termcolor” module was utilized to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was utilized for Apps titles, welcome , bye messages, also normal and important results such as the new generator password. Red was utilized for errors and non-normal messages. Yellow was utilized to indicate unique questions or guide messages.
+The Python “Termcolor” module was used to add color to the project. The colors green, yellow, and red were employed to represent different paths and results. Green was used for applications (Generator & Manager) titles, welcome, bye messages, also normal and important results such as the new generated password. Red was used for errors and abnormal messages. Yellow was used to indicate special questions or guide messages.
 
 ### Existing Features
 - Landing Page + Passwords Generator App Start:
@@ -132,22 +132,22 @@ The Python “Termcolor” module was utilized to add color to the project. The 
 When the user answer ‘yes’ to the question: ‘Do you want to start the Passwords Manager Application for the first time?’, a new file named ‘the-security-key.key’ will be created, and a symmetric key will be generated and stored inside that file.
 
 - Passwords Manager App - "Save" Path:<br>
-After the user chooses a save path and enters a username and password (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
+When the user chooses the 'save' path and enters a username and password fields (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
 
 - Passwords Manager App - "View" Path:<br>
-When the user chooses to view the path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
+When the user chooses the 'view' path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
 
 - Passwords Manager App - "Exit" Path:<br>
 When the user chooses to exit the Passwords Manager Application and there is previously saved data, a function will run and ask if they want to remove the previously saved data. If the user enters ‘yes’, a new function will run that will delete all of the data inside the files ‘my-passwords.txt’ and ‘my-encrypted-data.txt’.
 
 ### Future Features
 - Create an account for each user that shows only their passwords and requires a master password and username to access.
-- Remove and Edits a specific saved username or password inside the file without effect any other saved data.
+- Remove and edit a specific saved username or password inside the file without affecting any other saved data.
 - Password expiration reminders, two-factor authentication.
-- Create simple beatiful GUI for application.
+- Create a simple and beautiful GUI for the application.
 
 ## Testing
-- Extensive testing was completed to review each possible path / scenario a user might take. This was to ensure looping back to the specific and related point, no dead ends were encountered and showing error messages that can be readable for the user.
+- Extensive testing was completed to review each possible path/scenario a user might take. This was to ensure looping back to the specific and related point, no dead ends were encountered and error messages that can be readable for the user were shown.
 - Check the project flowchart to get each path detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).
 
 
@@ -162,13 +162,13 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 
 ![Bug-codecs](assets/readme-images/bug-utf-8.png)
 
-- The two following photos are showing a bug at two different times. Because of that I have done more searches on google and read more about Fernet and cryptography to find the issue with my code and learn more about encrypt and decrypt methods with symmetric key.
+- The following two photos show a bug at two different times. Because of that, I have done more searches on Google and read more about Fernet and cryptography to find the issue with my code and learn more about encryption and decryption methods with a symmetric key.
 
 ![Bug-Fernet1-cryptography](assets/readme-images/bug-fernet1.png)
 
 ![Bug-Fernet2-cryptography](assets/readme-images/bug-fernet2.png)
 
-- Although I encountered some error messages, I was able to resolve them by adding if conditions in certain situations. This approach provided the best logic, as well as an easy and fast solution.
+- Although I encountered some error messages, I was able to resolve them by adding if statements in certain situations. This approach provided the best logic, as well as an easy and fast solution.
 
 ### Unfixed Bugs
 - None currently found.
@@ -194,9 +194,9 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - [VS-code](https://code.visualstudio.com/) - IDE to write Python code, create new files and folders for the project.
 
 ## Deployment
-- The application was deployed on the Heroku Cloud Platform successfully.
-- I used VS-code IDE to write the Python code, and it was easy to use its terminal to commit my files and push them to my repository on Github.
-- It’s very important to install all necessary python modules/packages and import them into your project. Open the VS-code terminal and write: “pip freeze > requirements.txt” then commit and push this change to your Github repo before starting the deployment process on Heroku.
+- The application was deployed successfully on the Heroku Cloud Platform.
+- I used VS Code IDE to write the Python code, and it was easy to use its terminal to commit my files and push them to my repository on GitHub.
+- It’s very important to install all necessary Python modules/packages and import them into your project. Open the VS Code terminal and write: “pip freeze > requirements.txt” then commit and push this change to your GitHub repo before starting the deployment process on Heroku.
 
 
 ### How to deploy 
@@ -227,19 +227,19 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 ## Credits
 
 - [Code Institute](https://codeinstitute.net/de/) - Full Stack Developer Course.
-- ['Love Sandwiches'](https://github.com/alakeldev/love-sandwiches) - The Code-Institute Walkthrough project.
+- ['Love Sandwiches'](https://github.com/alakeldev/love-sandwiches) - The Code-Institute Walk-through project.
 - [W3Schools](https://www.w3schools.com/python/default.asp) - Was a very help source of information.
 - [Tutorials-Point](https://www.tutorialspoint.com/python/index.htm) - Was a very help source of information.
 - [Docs-Python](https://docs.python.org/3/tutorial/index.html) - Was a very help source of information.
 - [Udemy-Course](https://www.udemy.com/certificate/UC-aefd5c77-88d7-4a4e-a6f6-d9390bad39ab/) - In April 2022, I attended the Python Mega Course, which helped me to smoothly understand basic Python concepts. Additionally, I was able to learn some advanced material such as Pandas and Flask.
-- [My-Summary-In-Python](https://github.com/alakeldev/the-summary-of-python/blob/main/first.py) - I created a summary of my Python learning through my learning journey.
+- [My-Summary-In-Python](https://github.com/alakeldev/the-summary-of-python/blob/main/first.py) - I created a summary of my Python learning journey.
 - [Norton-Password-Manager](https://de.norton.com/feature/password-manager) - I found the product to be very helpful in generating the main idea of my project. Additionally, I am very satisfied with its features and services, such as the ability to generate new, powerful passwords and store them in an encrypted format.
 - [CI-Slack-Channels](https://code-institute-room.slack.com/) - I relied on the Code-Institute Slack community channels to increase my knowledge and to check for previous problems with the Heroku cloud platform and some errors that other students have faced.
 - [Cryptography-Fernet(Symmetric-encryption)](https://cryptography.io/en/latest/fernet/) - Fernet guarantees that a message/text/data encrypted using it cannot be manipulated or read without the symmetric key (also known as “secret key”).
   - The symmetric key: is generated using a URL-safe base64-encoded 32-byte key. Anyone with this key is able to create and read messages.
   - The encrypted data: is a secure message that cannot be read or altered without the key. It is URL-safe base64-encoded. This is referred to as a “Fernet token”.
   - The decrypted data: decrypts a “Fernet token” with the same symmetric key. If successfully decrypted, you will receive the original plaintext as the result, and it’s a readable version for the user.
-- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - To take a look in more advanced and awesome information/details related to Fernet and go a little deep dive in it.
+- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - To read and learn more advanced-awesome information related to Fernet and other Python cryptographic libraries.
 
 
 ## Acknowledgements
