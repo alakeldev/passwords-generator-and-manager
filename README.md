@@ -9,15 +9,15 @@ The Passwords Generator and Manager application is live and deployed on the Hero
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [UX](#ux)
-  - [App Purpose:](#app-purpose)
-  - [App Goals:](#app-goals)
-  - [Audience:](#audience)
-  - [Communication:](#communication)
-  - [Current User Goals:](#current-user-goals)
-  - [New User Goals:](#new-user-goals)
-  - [Future Goals:](#future-goals)
+  - [App Purpose](#app-purpose)
+  - [App Goals](#app-goals)
+  - [Audience](#audience)
+  - [Communication](#communication)
+  - [Current User Goals](#current-user-goals)
+  - [New User Goals](#new-user-goals)
+  - [Future Goals](#future-goals)
 - [Logic](#logic)
-  - [Diagrams-App:](#diagrams-app)
+  - [Diagrams-App](#diagrams-app)
 - [Design](#design)
   - [Colour](#colour)
   - [Existing Features](#existing-features)
@@ -39,30 +39,30 @@ The Passwords Generator and Manager application is live and deployed on the Hero
 
 ## UX
 
-### App Purpose:
+### App Purpose
 It is an application that helps you generate strong and secure passwords for your online accounts. With this application, you can create unique passwords that are difficult to guess or hack. The application also leads you to a password manager application that allows you to store your passwords securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all. This application is designed to make your online life easier and more secure.
 
-### App Goals: 
+### App Goals
 - Generate strong and unique passwords that are difficult to guess or hack.
 - Store the user passwords & usernames securely in an encrypted file, so you don’t have to remember them all.
 
-### Audience:
+### Audience
 Everyone who wants unique passwords that are difficult to guess or hack for their accounts and also who have multiple online accounts and have trouble remembering all their passwords and want to store them in secure place.
 
-### Communication:
+### Communication
 The App expresses its intent through the print statements generated, prompting the users to walk through the options available & make their selections. Various statements also are printed in a variety of colour to help break up the monotony of the white text with the aim of making each one of these statements more easy to read.
 
-### Current User Goals:
+### Current User Goals
 - Generate strong and unique passwords for their online accounts.
 - Store their passwords and usernames securely in an encrypted file.
 - Easily go back to their saved passwords whenever they need them.
 
-### New User Goals:
+### New User Goals
 - Generate fast small-medium passwords that are easy to remember but still secure.
 - Generate fast long passwords that are really secure and hard to guess.
 - Share their passwords and usernames with trusted family members or friends.
 
-### Future Goals:
+### Future Goals
 Most of the following features are in the version of "Norton" Passwords Generator and Manager:
 - Provide a password strength indicator that shows the strength of each password generated.
 - Provide a feature that allows users to import and export their passwords to other applications.
@@ -73,7 +73,7 @@ Most of the following features are in the version of "Norton" Passwords Generato
 
 ## Logic
 
-### [Diagrams-App](https://app.diagrams.net/):
+### [Diagrams-App](https://app.diagrams.net/)
 The following flowchart was created to visualise the logical flow and various paths possible.                          
 You can view the Application diagram-flowchart and see each path in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
 ![App-Diagram](assets/readme-images/pp3-diagram.png)
