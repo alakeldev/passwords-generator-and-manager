@@ -1,5 +1,5 @@
 <h1 align="center">🔐Passwords Generator & Manager🔐</h1>
-“Passwords Generator and Manager” it starts with an application that helps you generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application that helps you manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
+“Passwords Generator and Manager” it starts with an application that helps you to generate strong and secure passwords for your online accounts. With the password generator application, you can create unique passwords that are difficult to guess or hack. This application also leads you to a password manager application that helps you to manage your passwords by storing them securely in an encrypted file. You can easily access your passwords whenever you need them, without having to remember them all.<br></br>
 
 ![PWD-image](assets/readme-images/pwd.jpg)
 
@@ -50,7 +50,7 @@ It is an application that helps you generate strong and secure passwords for you
 Everyone who wants unique passwords that are difficult to guess or hack for their accounts and also who have multiple online accounts and have trouble remembering all their passwords and want to store them in secure place.
 
 ### Communication:
-The App expresses its intent through the print statements generated, prompting the user to walk through the options available & make their selections. Various statements also print in a variety of colour to help break up the monotony of the white text, making it easier to read.
+The App expresses its intent through the print statements generated, prompting the users to walk through the options available & make their selections. Various statements also are printed in a variety of colour to help break up the monotony of the white text with the aim of making each one of these statements more easy to read.
 
 ### Current User Goals:
 - Generate strong and unique passwords for their online accounts.
@@ -64,7 +64,7 @@ The App expresses its intent through the print statements generated, prompting t
 
 ### Future Goals:
 Most of the following features are in the version of "Norton" Passwords Generator and Manager:
-- Provide a password strength meter that shows the strength of each password generated.
+- Provide a password strength indicator that shows the strength of each password generated.
 - Provide a feature that allows users to import and export their passwords to other applications.
 - Biometric authentication technologies such as facial recognition or fingerprint scanning.
 - Encrypt the data with public key and decrypt these data with different privet key (asymmetric encryption).
@@ -134,10 +134,10 @@ You can view the Application diagram-flowchart and see each path in detail by cl
 When the user answer ‘yes’ to the question: ‘Do you want to start the Passwords Manager Application for the first time?’, a new file named ‘the-security-key.key’ will be created, and a symmetric key will be generated and stored inside that file.
 
 - Passwords Manager App - "Save" Path:<br>
-When the user chooses the 'save' path and enters a username and password fields (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and encrypt it with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
+When the user chooses the 'save' path and enters a username and password fields (without leaving any fields empty or with only one character), these entries will be saved inside ‘my-passwords.txt’. Then, a function will run to retrieve the data from ‘my-passwords.txt’ and will encrypt the retrieved data with the symmetric key that was stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’.
 
 - Passwords Manager App - "View" Path:<br>
-When the user chooses the 'view' path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and encrypt it with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
+When the user chooses the 'view' path and there are previously saved passwords inside ‘my-passwords.txt’, a function will run to retrieve the data from this file and will encrypt the retrieved data with the symmetric key that is stored inside ‘the-security-key.key’. The encrypted data will then be stored inside a new file named ‘my-encrypted-data.txt’. Then, another function will run to decrypt the data from ‘my-encrypted-data.txt’ file with the same key and print it out on the terminal.
 
 - Passwords Manager App - "Exit" Path:<br>
 When the user chooses to exit the Passwords Manager Application and there is previously saved data, a function will run and ask if they want to remove the previously saved data. If the user enters ‘yes’, a new function will run that will delete all of the data inside the files ‘my-passwords.txt’ and ‘my-encrypted-data.txt’.
@@ -149,7 +149,7 @@ When the user chooses to exit the Passwords Manager Application and there is pre
 - Create a simple and beautiful GUI for the application.
 
 ## Testing
-- Extensive testing was completed to review each possible path/scenario a user might take. This was to ensure looping back to the specific and related point, no dead ends were encountered and error messages that can be readable for the user were shown.
+- Extensive testing was completed to review each possible path/scenario a user might take. This was to ensure looping back to the specific and related point, error messages that can be understood by the user were shown to them and finally no dead ends were encountered.
 - Check the project flowchart to get each path detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).
 
 
@@ -183,7 +183,7 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - [termcolor](https://pypi.org/project/termcolor/): print colored text in the terminal.
 - [pyfiglet](https://pypi.org/project/pyfiglet/): create the app titles with ASCII art.
 - [random](https://docs.python.org/3/library/random.html): the primary objective is to generate a new password each time the user requests one by selecting random characters from the constant ‘PWD_CHARACTERS’.
-- [re](https://docs.python.org/3/library/re.html): the primary use of regular expressions and matching operations is to extract the first and last name of the user. Additionally, these operations are used to control the input with only numbers and a condition that controls the number of characters between 4 and 40.
+- [re](https://docs.python.org/3/library/re.html): the primary use of regular expressions and matching operations is to extract the first and last name of the user. Additionally, these operations are used to limit the input with numbers only in addition to condition which will limit also the number of characters to be between 4 to 40.
 - [codecs](https://docs.python.org/3/library/codecs.html): provides a way to encode and decode data.
 - [os](https://docs.python.org/3/library/os.html): the primary use of file manipulation is to create, read, and write files. Additionally, it is used to manipulate paths such as those used in if conditions to check the file, and to check the file size.
 - [Fernet](https://cryptography.io/en/latest/fernet/): the cryptography package includes a feature "Fernet" that allows for the encryption and decryption of data within a file using a symmetric key.
