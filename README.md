@@ -34,8 +34,6 @@ The Passwords Generator and Manager application is live and deployed on the Hero
 - [Deployment](#deployment)
   - [How to deploy](#how-to-deploy)
   - [How to clone](#how-to-clone)
-- [Credits](#credits)
-- [Acknowledgements](#acknowledgements)
 
 ## UX
 
@@ -75,7 +73,7 @@ Most of the following features are in the version of "Norton" Passwords Generato
 
 ### [Diagrams-App](https://app.diagrams.net/)
 The following flowchart was created to visualise the logical flow and various paths possible.                          
-You can view the Application diagram-flowchart and see each path in detail by clicking [HERE](https://alakeldev.github.io/pp3-diagram/).<br></br>
+You can view the Application diagram-flowchart and see each path in detail by clicking [HERE](https://alakeldev.github.io/pwds-app-diagram/).<br></br>
 ![App-Diagram](assets/readme-images/pp3-diagram.png)
 
 ## Design
@@ -226,23 +224,3 @@ As shown in the photo below, there is an error on line 127 that says “invalid 
 - On the terminal type "git clone", then paste the copied url and press 'Enter'.
 - The clone process should now begin.
 
-## Credits
-
-- [Code Institute](https://codeinstitute.net/de/) - Full Stack Developer Course.
-- ['Love Sandwiches'](https://github.com/alakeldev/love-sandwiches) - The Code-Institute Walk-through project.
-- [W3Schools](https://www.w3schools.com/python/default.asp) - Was a very help source of information.
-- [Tutorials-Point](https://www.tutorialspoint.com/python/index.htm) - Was a very help source of information.
-- [Docs-Python](https://docs.python.org/3/tutorial/index.html) - Was a very help source of information.
-- [Udemy-Course](https://www.udemy.com/certificate/UC-aefd5c77-88d7-4a4e-a6f6-d9390bad39ab/) - In April 2022, I attended the Python Mega Course, which helped me to smoothly understand basic Python concepts. Additionally, I was able to learn some advanced material such as Pandas and Flask.
-- [My-Summary-In-Python](https://github.com/alakeldev/the-summary-of-python/blob/main/first.py) - I created a summary of my Python learning journey.
-- [Norton-Password-Manager](https://de.norton.com/feature/password-manager) - I found the product to be very helpful in generating the main idea of my project. Additionally, I am very satisfied with its features and services, such as the ability to generate new, powerful passwords and store them in an encrypted format.
-- [CI-Slack-Channels](https://code-institute-room.slack.com/) - I relied on the Code-Institute Slack community channels to increase my knowledge and to check for previous problems with the Heroku cloud platform and some errors that other students have faced.
-- [Cryptography-Fernet(Symmetric-encryption)](https://cryptography.io/en/latest/fernet/) - Fernet guarantees that a message/text/data encrypted using it cannot be manipulated or read without the symmetric key (also known as “secret key”).
-  - The symmetric key: is generated using a URL-safe base64-encoded 32-byte key. Anyone with this key is able to create and read messages.
-  - The encrypted data: is a secure message that cannot be read or altered without the key. It is URL-safe base64-encoded. This is referred to as a “Fernet token”.
-  - The decrypted data: decrypts a “Fernet token” with the same symmetric key. If successfully decrypted, you will receive the original plaintext as the result, and it’s a readable version for the user.
-- [Comparitech-Fernet](https://www.comparitech.com/blog/information-security/what-is-fernet/) - To read and learn more advanced-awesome information related to Fernet and other Python cryptographic libraries.
-
-
-## Acknowledgements
-- I would like to express my gratitude to my mentor 'Martina Terlevic' for her invaluable feedback, advice, tips, and reviewing my code.
